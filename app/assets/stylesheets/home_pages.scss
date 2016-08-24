@@ -1,0 +1,93 @@
+// Place all the styles related to the home_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.landing-area{
+	margin: -50px -15px 0;
+	height: 710px;
+	background-image: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15)), 
+						url("home-travel.jpeg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    color: white;
+}
+
+.landing-text{
+	text-align: center;
+	top: 40%;
+	transform: translateY(50%);
+	position: relative;
+}
+
+.landing-text h1{
+	font-size: 50px;
+}
+
+.blog-content, .video-content, .social-content{
+	text-align: center;
+}
+
+.content h2{
+	font-family: cursive;
+	color: #2eb850;
+}
+
+.content h5{
+
+}
+
+.blog-content h1{
+	font-size: 40px;
+}
+
+.index-thumbnails{
+	width: 380px;
+	height: 250px;
+	margin: 20px 10px;
+}
+
+.content{
+	margin-top: 80px;
+}
+
+/******* About ********/
+
+.headshot{
+	text-align: center;
+}
+
+.about-page{
+	margin-top: 150px;
+}
+
+.headshot img{
+	border-radius: 60%;
+}
+
+.bio-text{
+	color: gray;
+}
+
+/******* Book Now *****/
+
+.book-page{
+	background-image: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15)), 
+						url("map-backdrop.jpeg");
+	height: 600px;
+	margin-bottom: -15px;
+}
+
+.book-form{
+	color: white;
+}
+
+/****** Social *****/
+.social-content{
+	margin-bottom: 40px;
+}
