@@ -14,13 +14,39 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= bootstrap.min.js
 //= require_tree .
 
-$(document).ready(function(){
+$(document).on('ready turbolinks:load', function(){
+	$(".full-width").fadeIn(2500);
+
 	$(".index-thumbnails").hover(function(){
-		$(this).animate({opacity: 0.60})
+		$(this).animate({opacity: 0.60},"fast")
 	},
 	function(){
-		$(this).animate({opacity: 1})
+		$(this).animate({opacity: 1},"fast")
 	});
+
+	setTimeout(function(){
+	$("#subscribeModal").modal("show"); 
+	}, 
+	5000
+	);
+
+	$(".close").on("click", function(){
+		$("#subscribeModal").modal("hide");
+	});
+
+	$(".social").mouseover(
+		function(){
+		  $(this).animate({height: 116, width: 116},"fast");
+		}
+	);
+
+	$(".social").mouseout(
+		function(){
+		  $(this).animate({height: 96, width: 96},"fast");
+		}
+	);
+
 });

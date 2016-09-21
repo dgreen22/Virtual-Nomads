@@ -9,8 +9,8 @@ get '/about-me' => 'home_pages#about'
 
 get '/book-now' => 'prospects#new'
 
-get '/suppliers' => 'home_pages#suppliers'
+get '/blog-video' => 'home_pages#blog_video'
 
-resources :prospects
+resources :prospects, :subscribers
 
 end

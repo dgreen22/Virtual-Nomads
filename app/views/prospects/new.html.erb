@@ -1,15 +1,14 @@
-<%= render partial: 'layouts/alt_navbar' %>
-<div class="container-fluid book-page">
-	<div class="row book-form">
-		<div class="col-md-8 col-md-offset-2">
+<div class="container-fluid book-page" id="book-now">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 book-form">
 			<h2> Start Your Travel Journey Today </h2>
 			<%= form_for @prospect do |s| %>
-		    	<%= s.label :first_name, class: "prospect-label" %>
+		    	<%= s.label :first_name, class: "prospect-label req" %>
 		    	<%= s.text_field :first_name, class: "prospect-input", required: true %> <br />
-		    	<%= s.label :last_name, class: "prospect-label" %>
+		    	<%= s.label :last_name, class: "prospect-label req" %>
 		    	<%= s.text_field :last_name, class: "prospect-input", required: true %>
 		    	<br />
-		    	<%= s.label :email, class: "prospect-label" %>
+		    	<%= s.label :email, class: "prospect-label req" %>
 		    	<%= s.email_field :email, class: "prospect-input", required: true %> 
 		    	<br />
 		    	<%= s.label :mailing_address, class: "prospect-label" %>
@@ -28,6 +27,9 @@
 		    	<%= s.submit "Submit", class: "btn btn-primary button-send" %>
 		    	</div>
 	    	<% end %>
+
+	    	<p> Looking to book a hotel? </p>
+			<%= link_to "For Hotel Bookings", "http://virtualnomads.agentstudio.com/", class: "btn btn-warning btn-lg" %>
 		</div>
 	</div>
 </div>
