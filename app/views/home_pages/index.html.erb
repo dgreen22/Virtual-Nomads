@@ -1,116 +1,114 @@
-<div class="container-fluid">
-	<section class="row" id="home">
-		<div class="col-md-12 landing-area">
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			  <!-- Indicators -->
-			  <ol class="carousel-indicators">
-			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			    <li data-target="#myCarousel" data-slide-to="1"></li>
-			    <li data-target="#myCarousel" data-slide-to="2"></li>
-			    <li data-target="#myCarousel" data-slide-to="3"></li>
-			  </ol>
+<section class="row" id="home">
+	<div class="col-md-12 landing-area">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		    <li data-target="#myCarousel" data-slide-to="1"></li>
+		    <li data-target="#myCarousel" data-slide-to="2"></li>
+		    <li data-target="#myCarousel" data-slide-to="3"></li>
+		  </ol>
 
-			  <!-- Wrapper for slides -->
-			  <div class="carousel-inner" role="listbox">
-			    <div class="item active">
-			      <%= image_tag("adventure-pic.jpg", alt: "person walking on canopy") %>
-			      <div class="carousel-caption">
-			      	<div class="full-width">
-				        <h1>Travel Adventurous.</h1>
-				        <p>Adventure seekers wanted.</p>
-				      </div><!--/full-width-->
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+		    <div class="item active">
+		      <%= image_tag("adventure-pic.jpg", alt: "person walking on canopy") %>
+		      <div class="carousel-caption">
+		      	<div class="full-width">
+			        <h1>Travel Adventurous.</h1>
+			        <p>Adventure seekers wanted.</p>
+			      </div><!--/full-width-->
+		      </div>
+		    </div>
+
+		    <div class="item">
+		    	<%= image_tag("art-pic.jpg", alt: "person in art shop") %>
+		      <div class="carousel-caption">
+		      	<div class="full-width">
+			        <h1>Travel Artsy.</h1>
+			        <p>Design your world.</p>
+		      	</div>
+		      </div>
+		    </div>
+
+		    <div class="item">
+		    	<%= image_tag("beach-pic.jpg", alt: "person on beach") %>
+		      <div class="carousel-caption">
+		      	<div class="full-width">
+			        <h1>Travel Relaxed.</h1>
+			        <p>More than comfort. Peace of mind.</p>
 			      </div>
 			    </div>
+		    </div>
 
-			    <div class="item">
-			    	<%= image_tag("art-pic.jpg", alt: "person in art shop") %>
-			      <div class="carousel-caption">
-			      	<div class="full-width">
-				        <h1>Travel Artsy.</h1>
-				        <p>Design your world.</p>
-			      	</div>
+		    <div class="item">
+		    	<%= image_tag("historic.jpg", alt: "stairs from historic slave castles") %>
+		      <div class="carousel-caption">
+		      	<div class="full-width">
+			        <h1>Travel Historically.</h1>
+			        <p>See history while you create your own.</p>
 			      </div>
-			    </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>			
+	</div><!--/col-md-12-->
+	<%= render partial: "subscribe_modal" %>
+</section>
 
-			    <div class="item">
-			    	<%= image_tag("beach-pic.jpg", alt: "person on beach") %>
-			      <div class="carousel-caption">
-			      	<div class="full-width">
-				        <h1>Travel Relaxed.</h1>
-				        <p>More than comfort. Peace of mind.</p>
-				      </div>
-				    </div>
-			    </div>
-
-			    <div class="item">
-			    	<%= image_tag("historic.jpg", alt: "stairs from historic slave castles") %>
-			      <div class="carousel-caption">
-			      	<div class="full-width">
-				        <h1>Travel Historically.</h1>
-				        <p>See history while you create your own.</p>
-				      </div>
-			      </div>
-			    </div>
-			  </div>
-			</div>			
-		</div><!--/col-md-12-->
-		<%= render partial: "subscribe_modal" %>
-	</section>
-
-	<section class="row blog-content content">
-		
-		<h1> Recent Posts </h1>
-		<h2> Blog </h2>
-		<div class="col-xs-12 col-md-4">
-			<%= image_tag "trip-1.jpg", class: "index-thumbnails", alt: "vacation thumbnail pic" %><br>
-			<h3> My Travels </h3>
-			<p> Blog on my travels </p>
-		</div>
-		<div class="col-xs-12 col-md-4">
-			<%= image_tag "trip-2.jpeg", class: "index-thumbnails", alt: "vacation thumbnail pic" %><br>
-			<h3> My Travels 2</h3>
-			<p> Blog Two on my travels </p>
-		</div>
-		<div class="col-xs-12 col-md-4">
-			<%= image_tag "trip-3.jpeg", class: "index-thumbnails", alt: "vacation thumbnail pic" %><br>
-			<h3> My Travels 3 </h3>
-			<p> Blog Three on my travels </p>
-		</div>
-	</section>
-	<section class="row video-content content">
-		<h2> Video </h2>
-		<div class="col-xs-12 col-md-4">			
-			<iframe width="350" height="225" src="https://www.youtube.com/embed/WaXKMcFV1EQ" frameborder="0" allowfullscreen></iframe>
-			<h3> My Video </h3>
-			<p> Blog on my travels </p>
-		</div>
-		<div class="col-xs-12 col-md-4">
-			<iframe width="350" height="225" src="https://www.youtube.com/embed/-wPw-lMANig" frameborder="0" allowfullscreen></iframe>
-			<h3> My Video 2</h3>
-			<p> Blog Two on my travels </p>
-		</div>
-		<div class="col-xs-12 col-md-4">
-			<iframe width="350" height="225" src="https://www.youtube.com/embed/WaXKMcFV1EQ" frameborder="0" allowfullscreen></iframe><br>
-			<h3> My Video 3 </h3>
-			<p> Blog Three on my travels </p>
-		</div>
-	</section>
-	<section class="row social-content content">
-		<h2> Stay In Touch </h2>
-		<div class="col-xs-4 col-md-4 col-md-offset-1">
-			<h4> Latest Facebook Posts </h4>
-			<div class="fb-page" data-href="https://www.facebook.com/Virtual-Nomads-257068121132395/" data-tabs="timeline" data-width="410" data-height="500" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Virtual-Nomads-257068121132395/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Virtual-Nomads-257068121132395/">Virtual Nomads</a></blockquote></div>
-		</div>
-		<div class="col-xs-4 col-md-3">
-			<h4> Follow Us</h4>
-			<%= link_to image_tag('facebook.png', class: "fb-button social", alt: 'facebook logo'), "https://www.facebook.com/Virtual-Nomads-257068121132395/", target: '_blank' %><br>
-			<%= link_to image_tag("twitter.png", class: "tw-button social", alt: "twitter logo"), "https://twitter.com/?lang=en-ca", target: "_blank" %><br>			
-			<%= link_to image_tag("instagram.png", class: "instagram-button social", alt: "instagram logo"), "https://www.instagram.com/virtualnomads/", target: "_blank" %><br>
-			<%= image_tag "pinterest.png",class: "pinterest-button social", alt: "pinterest logo" %><br>
-		</div>
-		<div class="col-xs-4 col-md-3">
-				<h4> Subscribe </h4>
-			   <%= render partial: "mail_chimp_subscriber_form" %>
-		</div>
-	</section>
-</div>
+<section class="row blog-content content">
+	
+	<h1> Recent Posts </h1>
+	<h2> Blog </h2>
+	<div class="col-xs-12 col-md-4">
+		<%= image_tag "trip-1.jpg", class: "index-thumbnails", alt: "vacation thumbnail pic" %><br>
+		<h3> My Travels </h3>
+		<p> Blog on my travels </p>
+	</div>
+	<div class="col-xs-12 col-md-4">
+		<%= image_tag "trip-2.jpeg", class: "index-thumbnails", alt: "vacation thumbnail pic" %><br>
+		<h3> My Travels 2</h3>
+		<p> Blog Two on my travels </p>
+	</div>
+	<div class="col-xs-12 col-md-4">
+		<%= image_tag "trip-3.jpeg", class: "index-thumbnails", alt: "vacation thumbnail pic" %><br>
+		<h3> My Travels 3 </h3>
+		<p> Blog Three on my travels </p>
+	</div>
+</section>
+<section class="row video-content content">
+	<h2> Video </h2>
+	<div class="col-xs-12 col-md-4">			
+		<iframe width="350" height="225" src="https://www.youtube.com/embed/WaXKMcFV1EQ" frameborder="0" allowfullscreen></iframe>
+		<h3> My Video </h3>
+		<p> Blog on my travels </p>
+	</div>
+	<div class="col-xs-12 col-md-4">
+		<iframe width="350" height="225" src="https://www.youtube.com/embed/-wPw-lMANig" frameborder="0" allowfullscreen></iframe>
+		<h3> My Video 2</h3>
+		<p> Blog Two on my travels </p>
+	</div>
+	<div class="col-xs-12 col-md-4">
+		<iframe width="350" height="225" src="https://www.youtube.com/embed/WaXKMcFV1EQ" frameborder="0" allowfullscreen></iframe><br>
+		<h3> My Video 3 </h3>
+		<p> Blog Three on my travels </p>
+	</div>
+</section>
+<section class="row social-content content">
+	<h2> Stay In Touch </h2>
+	<div class="col-xs-4 col-md-4 col-md-offset-1">
+		<h4> Latest Facebook Posts </h4>
+		<div class="fb-page" data-href="https://www.facebook.com/Virtual-Nomads-257068121132395/" data-tabs="timeline" data-width="410" data-height="500" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Virtual-Nomads-257068121132395/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Virtual-Nomads-257068121132395/">Virtual Nomads</a></blockquote></div>
+	</div>
+	<div class="col-xs-4 col-md-3">
+		<h4> Follow Us</h4>
+		<%= link_to image_tag('facebook.png', class: "fb-button social", alt: 'facebook logo'), "https://www.facebook.com/Virtual-Nomads-257068121132395/", target: '_blank' %><br>
+		<%= link_to image_tag("twitter.png", class: "tw-button social", alt: "twitter logo"), "https://twitter.com/?lang=en-ca", target: "_blank" %><br>			
+		<%= link_to image_tag("instagram.png", class: "instagram-button social", alt: "instagram logo"), "https://www.instagram.com/virtualnomads/", target: "_blank" %><br>
+		<%= image_tag "pinterest.png",class: "pinterest-button social", alt: "pinterest logo" %><br>
+	</div>
+	<div class="col-xs-4 col-md-3">
+			<h4> Subscribe </h4>
+		   <%= render partial: "mail_chimp_subscriber_form" %>
+	</div>
+</section>

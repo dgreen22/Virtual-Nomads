@@ -1,5 +1,18 @@
-<div class="container" id="blog-video">
+<div id="blog-video">
 	<div class="row">
 		<h1> Blog & Video </h1>
+		<div class="col-md-2 col-md-offset-2">
+			<% @blog_posts.each do |b| %>
+			  <%= image_tag b.blog_pic.url :thumb %><br>
+			  <%= b.title %><br>
+			  <%= b.content %><br>
+			  <%= b.category %><br>
+			  <%= b.posted_by %><br>
+			  <%= link_to edit_blog_post_path(b) do %>
+			    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
+			  <% end %><br>
+			  <%= b.comments.count if !b.comments.nil? %><br>	  
+			<% end %>
+		</div>
 	</div>
 </div>

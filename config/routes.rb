@@ -11,6 +11,6 @@ get '/book-now' => 'prospects#new'
 
 get '/blog-video' => 'home_pages#blog_video'
 
-resources :prospects, :subscribers
+resources :prospects, :subscribers, :blog_posts
 
 end
