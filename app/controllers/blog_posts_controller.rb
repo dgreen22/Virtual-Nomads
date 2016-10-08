@@ -1,11 +1,12 @@
 class BlogPostsController < ApplicationController
 
 	def index
-	  @blog_posts = BlogPost.all
+	  @blog_posts = BlogPost.order(id: :desc)
 	end
-
+    
 	def new
 	  @blog_post = BlogPost.new
+	  @blog_post.categories.build(params[@blog_post])
 	end
 
 	def edit
@@ -23,6 +24,7 @@ class BlogPostsController < ApplicationController
 
 	def show
 		@blog_post = BlogPost.find(params[:id])
+		
 	end
 
 	def create
@@ -36,12 +38,13 @@ class BlogPostsController < ApplicationController
 		    format.json { render json: @blog_post.errors, status: :unprocessable_entity }
 		  end
 		end
+		puts @blog_post.errors.inspect
 	end
 
 private
 
   def blog_post_params
-  	params.require(:blog_post).permit(:title, :content, :category, :posted_by, :comments, :blog_pic)
+  	params.require(:blog_post).permit(:title, :content, :posted_by, :comments, :blog_pic, {categories_attributes: [:category_id, :category_name]})
   end
 
 end

@@ -1,11 +1,18 @@
 <div class="row">
-	<div class="col-md-8 col-md-offset-2">
-	  
+	<div class="col-md-8 col-md-offset-2">	  
 		  <%= image_tag @blog_post.blog_pic %><br>
+		  <% @blog_post.categories.each_with_index do |category, index| %>
+		    <% category.each do |c| %>
+		      <%= c.category_name %>
+		    <% end %>
+		  <% end %>
 		  <%= @blog_post.title %><br>
 		  <%= @blog_post.content %><br>
-		  <%= @blog_post.category %><br>
 		  <%= @blog_post.posted_by %><br>
-
-	</div>
+			<%= @blog_post.created_at.strftime("%B %Y") %><br>
+	    <%= link_to edit_blog_post_path(@blog_post) do %>
+		    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
+		  <% end %><br>
+		  	<%= link_to "Leave a Comment",new_blog_post_comment_path(@blog_post), class: "btn btn-danger" %> 
 </div>
+	</div>

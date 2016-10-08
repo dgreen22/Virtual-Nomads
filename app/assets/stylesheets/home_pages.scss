@@ -51,20 +51,33 @@
 	font-weight: bold;
 }
 
+.b-post h3{
+	font-weight: bold;
+	font-size: 28px;
+}
+
+.b-post p{
+
+}
+
 .content > h2{
-	color: rgb(46, 184, 80);
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	margin-bottom: 30px;
 }
 
 .index-thumbnails{
-	width: 350px;
-	height: 225px;
-	margin: 20px 10px;
+	width: 375px;
+	height: 250px;
+	margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 /******** Video Section ********/
 
 .video-content{
-	background: url("contemporary_china_2.png");
+	
 }
 
 .video-content{
@@ -165,8 +178,9 @@
 }
 
 .social-content h4{
-	font-weight: bold;
-	margin-bottom: 20px;
+	font-weight: bolder;
+	font-size: 24px;
+	margin-bottom: 24px;
 }
 
 .fb-button{
@@ -192,3 +206,25 @@
 	height: 96px; 
 	width: 96px;
 }
+
+.nex-tico{
+	margin: 15px;
+}
+
+/************* Blog/Video *************/
+
+.sidebar{
+	background: gray;
+}
+
+.bg-title-posted{
+	color: gray;
+}
+
+.bg-title-posted span{
+	font-weight: bold;
+	font-size: 24px;
+	color: black;
+	margin-right: 20px;
+}
+

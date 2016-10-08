@@ -17,7 +17,7 @@
 //= bootstrap.min.js
 //= require_tree .
 
-$(document).on('ready turbolinks:load', function(){
+$(document).on('turbolinks:load', function(){
 	$(".full-width").fadeIn(2500);
 
 	$(".index-thumbnails").hover(function(){

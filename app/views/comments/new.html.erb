@@ -1,0 +1,11 @@
+<div class="row">
+	<div class="col-md-12">
+		<% form_for @blog_post_comments do |b| %>
+			<%= b.label :comment_content, "Comments" %>
+			<%= b.text_area :comment_content %>
+
+			<%= b.label :comment_content_creator, "Comments" %>
+			<%= b.text_area :comment_content_creator %>	
+		<% end %>
+	</div>
+</div>

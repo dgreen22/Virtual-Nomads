@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-root 'home_pages#index'
+	root 'home_pages#index'
 
-get '/home' => 'home_pages#index'
+	get '/home' => 'home_pages#index'
 
-get '/about-me' => 'home_pages#about'
+	get '/about-me' => 'home_pages#about'
 
-get '/book-now' => 'prospects#new'
+	get '/book-now' => 'prospects#new'
 
-get '/blog-video' => 'home_pages#blog_video'
+	get '/blog-video' => 'home_pages#blog_video'
 
-resources :prospects, :subscribers, :blog_posts
+	resources :prospects, :subscribers, :categories
 
+	resources :blog_posts do
+	  resources :comments
+	end
 end
