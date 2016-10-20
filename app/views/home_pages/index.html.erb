@@ -68,14 +68,14 @@
 		<% end %>
 	</div>
 	<div class="col-xs-12 col-md-4 b-post">
-		<% if !@last.nil? %>
+		<% if !@second.nil? %>
 			<%= image_tag "#{@second.blog_pic.thumb.url}", class: "index-thumbnails", class: "index-thumbnails", alt: "vacation thumbnail pic" %><br>
 			<h3> <%= @second.title %></h3>
 			<p> Blog Two on my travels </p>
 		<% end %>
 	</div>
 	<div class="col-xs-12 col-md-4 b-post">
-		<% if !@last.nil? %>
+		<% if !@third.nil? %>
 			<%= image_tag "#{@third.blog_pic.thumb.url}", class: "index-thumbnails", class: "index-thumbnails", alt: "vacation thumbnail pic" %><br>
 			<h3> <%= @third.title %> </h3>
 			<p> Blog Three on my travels </p>
