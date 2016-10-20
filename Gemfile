@@ -32,6 +32,8 @@ gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 
 gem 'kaminari'
 
+gem 'devise'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

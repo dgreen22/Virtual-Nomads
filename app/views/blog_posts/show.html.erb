@@ -1,18 +1,26 @@
 <div class="row">
-	<div class="col-md-8 col-md-offset-2">	  
-		  <%= image_tag @blog_post.blog_pic %><br>
-		  <% @blog_post.categories.each_with_index do |category, index| %>
-		    <% category.each do |c| %>
-		      <%= c.category_name %>
-		    <% end %>
-		  <% end %>
-		  <%= @blog_post.title %><br>
-		  <%= @blog_post.content %><br>
-		  <%= @blog_post.posted_by %><br>
-			<%= @blog_post.created_at.strftime("%B %Y") %><br>
-	    <%= link_to edit_blog_post_path(@blog_post) do %>
-		    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
-		  <% end %><br>
-		  	<%= link_to "Leave a Comment",new_blog_post_comment_path(@blog_post), class: "btn btn-danger" %> 
-</div>
+	<div class="col-md-8 col-md-offset-2">
+			<%= link_to "Return to Blogs", '/blog-video', class: "btn btn-primary" %><br>
+			<div class="full-blog">	  
+			  <%= image_tag @blog_post.blog_pic %><br>
+			  <% @blog_post.categories.each do |category| %>
+			    <%= category.category_name %>
+			  <% end %><br>
+			  <%= @blog_post.title %><br>
+			  <%= @blog_post.content %><br>
+			  <%= @blog_post.posted_by %><br>
+				<%= @blog_post.created_at.strftime("%B %Y") %><br>
+		    <%= link_to edit_blog_post_path(@blog_post) do %>
+			    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
+			  <% end %><br>
+			  	<%= link_to "Leave a Comment",new_blog_post_comment_path(@blog_post), class: "btn btn-danger" %><br>
+		  </div>
+		  <div class="comments-section"> 
+			  <% @blog_post.comments.each do |com| %>
+			  <h4> Comments: </h4>
+				  By: <%= com.comment_content_creator %><br>
+				  <p><%= com.comment_content %></p>
+			  <% end %>
+			</div><!--/comments-section-->
 	</div>
+</div>

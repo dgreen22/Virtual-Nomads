@@ -1,11 +1,13 @@
 <div class="row">
-	<div class="col-md-12">
-		<% form_for @blog_post_comments do |b| %>
-			<%= b.label :comment_content, "Comments" %>
-			<%= b.text_area :comment_content %>
+	<div class="col-md-6 col-md-offset-3">
+		<%= form_for([@blog_post, @blog_post.comments.build ]) do |b| %>
+			<%= b.label :comment_content_creator, "Name",class: "comment-label" %>
+			<%= b.text_field :comment_content_creator,class: "comment-text", required: true %><br><br>
 
-			<%= b.label :comment_content_creator, "Comments" %>
-			<%= b.text_area :comment_content_creator %>	
+			<%= b.label :comment_content, "Comments", class: "comment-label" %>
+			<%= b.text_area :comment_content,class: "comment-text", required: true, cols: "20",rows: "10" %><br>
+
+			<%= b.submit "Submit Comment" %>	
 		<% end %>
 	</div>
 </div>

@@ -4,15 +4,11 @@
 			<%= b.label :title %>
 			<%= b.text_field :title %><br>
 
-			<%= b.fields_for :categories do |cat| %>
+			<%= b.fields_for :categorizations do |cat| %>
 			  <%= cat.label :category_name, "Category 1" %>
-			  <%= cat.collection_select(:category_id, Category.all, :id, :category_name, include_blank: "Select Category") %><br>
-
-			  <%= cat.label :category_name, "Category 2" %>
-			  <%= cat.collection_select(:category_id, Category.all, :id, :category_name, include_blank: "Select Category") %><br>
-
-			  <%= cat.label :category_name, "Category 3" %>
-			  <%= cat.collection_select(:category_id, Category.all, :id, :category_name, include_blank: "Select Category") %><br>
+			  <%= cat.collection_select(:category_id, Category.all, :id, :category_name, blank: "Select Category") %>
+			<%= link_to "Add Categories", new_category_path %>
+			  <br>
 			<% end %>
 
 			<%= b.label :posted_by %>

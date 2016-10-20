@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
 	def create
 	  @category = Category.new(cat_params)
 	  if @category.save
-	    redirect_to '/blog-video'
+	    redirect_to new_blog_post_path
 	  else
 	  	puts @category.errors.inspect
 	    format.html { render :new }

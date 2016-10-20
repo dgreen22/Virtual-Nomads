@@ -4,6 +4,13 @@
 			<%= b.label :title %>
 			<%= b.text_field :title %><br>
 
+			<%= b.fields_for :categorizations do |cat| %>
+			  <%= cat.label :category_name, "Category 1" %>
+			  <%= cat.collection_select(:category_id, Category.all, :id, :category_name, blank: "Select Category") %>
+			<%= link_to "Add Categories", new_category_path %>
+			  <br>
+			<% end %>
+
 			<%= b.label :posted_by %>
 			<%= b.text_field :posted_by %><br>
 
@@ -14,6 +21,6 @@
 			<%= b.file_field :blog_pic %>
 
 			<%= b.submit "Submit", class: "btn btn-primary" %>
-	    <% end %>
+	  <% end %>
 	</div>
 </div>

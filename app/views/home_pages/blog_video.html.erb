@@ -1,28 +1,53 @@
 <div id="blog-video">
 	<div class="row">
-		<h1> Blog & Video </h1>	
-		<p><%= link_to "Submit New Blog Post", new_blog_post_path, class: "btn btn-primary" %></p>	
+		
+		<% if admin_signed_in? %>
+			<p><%= link_to "Submit New Blog Post", new_blog_post_path, class: "btn btn-primary" %></p>	
+		<% end %>
+			<% if params[:search] %>
+				<h2> Search Results for "<%= params[:search] %>" </h2>
+			<% else %>
 		<div class="col-md-7 col-md-offset-2 entry-info">
-			<% @blog_posts.each do |b| %>		
-			  <div class="bg-pic"><%= image_tag b.blog_pic.url :thumb, class: "bg-thumb-pic", alt: "Blog post thumbnail" %></div>
-			  <div class="bg-title-posted">
-				  <h4><span><%= link_to b.title, blog_post_path(b) %></span>
-				  Posted By: <%= b.posted_by %></h4>
-			  </div>
-			  <div class="bg-category">
-			    <%= b.categories %>
-			  </div>
-			  <div class="bg-content"><%= b.content %></div>			 
-			  <%= link_to edit_blog_post_path(b) do %>
-			    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
-			  <% end %><br>
-			  <!--  b.comments.count if !b.comments.nil? <br> -->			 	
-			<% end %><br>
+				<h1> Blog & Video </h1>		
+				<% @blog_posts.each do |b| %>		
+				  <div class="bg-pic"><%= image_tag b.blog_pic.url :thumb, class: "bg-thumb-pic", alt: "blog post thumbnail" %>
+				  </div><!--/bg-pic-->
+
+					  <div class="bg-title-posted">
+						  <h4><span><%= link_to b.title, blog_post_path(b) %></span>
+						  Posted By: <%= b.posted_by %></h4>
+					  </div>
+					  <div class="bg-category">
+					    <% b.categories.each do |ctg| %>
+					   	  <%= ctg.category_name %>
+					    <% end %>
+					  </div>
+					  <div class="bg-content">
+					  	<% if (b.content).length > 225 %> 
+					  		<%= truncate(b.content, length: 225, omission: "...") {link_to "Read", blog_post_path(b)} %>
+				  		<% else %>
+				  			<%= b.content %>
+				  		<% end %>
+				  	</div>
+				  	<% if admin_signed_in? %>			 
+						  <%= link_to edit_blog_post_path(b) do %>
+						    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
+						  <% end %><br>
+					  <% end %>
+					  <!--  b.comments.count if !b.comments.nil? <br> -->
+					 	
+				<% end %>
+			<% end %>
 			<%= paginate @blog_posts %>	
 		</div>
 
 		<div class="col-md-3 sidebar">
-			<h1> Sidebar </h1>
-		</div>
-	</div>
-</div>
+			<h1> Archives </h1>
+				<h3> Categories </h3>
+				<% @categories.each do |list| %>
+				  <%= list.category_name %><br>
+				<% end %>
+		</div><!--/sidebar-->
+	</div><!--/row-->
+</div><!--/blog-video-->
+

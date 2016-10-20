@@ -1,12 +1,15 @@
 class BlogPostsController < ApplicationController
+	protect_from_forgery
+	before_action :authenticate_admin!, only: [:new, :edit]
 
 	def index
 	  @blog_posts = BlogPost.order(id: :desc)
 	end
-    
+
 	def new
 	  @blog_post = BlogPost.new
-	  @blog_post.categories.build(params[@blog_post])
+	  @blog_post.categorizations.build.build_category
+	  @blog_post.categories.build
 	end
 
 	def edit
@@ -14,7 +17,7 @@ class BlogPostsController < ApplicationController
 	end
 
 	def update
-		   @blog_post = BlogPost.find(params[:id])
+	@blog_post = BlogPost.find(params[:id])
     if @blog_post.update_attributes(blog_post_params)
       render 'show'  
     else
@@ -44,7 +47,7 @@ class BlogPostsController < ApplicationController
 private
 
   def blog_post_params
-  	params.require(:blog_post).permit(:title, :content, :posted_by, :comments, :blog_pic, {categories_attributes: [:category_id, :category_name]})
+  	params.require(:blog_post).permit(:title, :content, :posted_by, :comments, :blog_pic, {categorizations_attributes: [:category_id, :category_name]})
   end
 
 end

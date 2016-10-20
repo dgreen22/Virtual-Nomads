@@ -32,9 +32,13 @@ html{
     overflow-x: hidden;
 }
 
+.navbar-brand{
+	padding: 0
+}
+
 .navbar{
 	background-color: transparent;
-	background: transparent;
+	background: white;
 	border-color: transparent;
 	border: 0;
 	margin-right: -15px;
@@ -70,7 +74,7 @@ html{
 }
 
 .navbar-header .navbar-brand, .navbar-default .navbar-nav > li > a{
-	color: white;
+	color: rgba(46, 184, 80,0.7);
 	padding-left: 30px;
 	padding-right: 30px;
 }
@@ -88,7 +92,7 @@ html{
 }
 
 .navbar-home{
-	background-color: rgba(46, 184, 80,0.7);
+	border-bottom-color: rgba(46, 184, 80,0.7);
 	font-family: 'Shadows Into Light Two', cursive;
 }
 
