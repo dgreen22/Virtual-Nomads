@@ -7,7 +7,7 @@
 			    <%= category.category_name %>
 			  <% end %><br>
 			  <%= @blog_post.title %><br>
-			  <%= @blog_post.content %><br>
+			  <%= simple_format(@blog_post.content) %><br>
 			  <%= @blog_post.posted_by %><br>
 				<%= @blog_post.created_at.strftime("%B %Y") %><br>
 		    <%= link_to edit_blog_post_path(@blog_post) do %>

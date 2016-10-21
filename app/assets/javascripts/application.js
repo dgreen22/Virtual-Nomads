@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= bootstrap.min.js
+//= require ckeditor/init
 //= require_tree .
 
 $(document).on('turbolinks:load', function(){

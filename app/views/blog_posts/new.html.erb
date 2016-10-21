@@ -15,7 +15,7 @@
 			<%= b.text_field :posted_by %><br>
 
 			<%= b.label :content %>
-			<%= b.text_area :content %><br>
+			<%= b.cktext_area :content, rows: "20", cols: "120" %><br>
 
 			<%= b.label :blog_pic, "Picture" %>
 			<%= b.file_field :blog_pic %>
