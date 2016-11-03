@@ -11,13 +11,15 @@ Rails.application.routes.draw do
 
 	get '/book-now' => 'prospects#new'
 
-	get '/blog-video' => 'home_pages#blog_video'
+	get '/blogs' => 'blog_posts#index'
+
+	get '/video-posts' => 'home_pages#video_posts'
 
 	get '/admin' => 'devise/sessions#new'
 	
 	resources :prospects, :subscribers, :categories
 
-	resources :blog_posts do
+	resources :blog_posts, :video_posts do
 	  resources :comments
 	end
 end

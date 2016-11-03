@@ -12,7 +12,7 @@
 		  <!-- Wrapper for slides -->
 		  <div class="carousel-inner" role="listbox">
 		    <div class="item active">
-		      <%= image_tag("adventure-pic.jpg", alt: "person walking on canopy") %>
+		      <%= image_tag("adventure-pic.jpg", class: "landing-pics", alt: "person walking on canopy") %>
 		      <div class="carousel-caption">
 		      	<div class="full-width">
 			        <h1>We listen to finds the things that make your trip that more awesome</h1>
@@ -22,7 +22,7 @@
 		    </div>
 
 		    <div class="item">
-		    	<%= image_tag("art-pic.jpg", alt: "person in art shop") %>
+		    	<%= image_tag("art-pic.jpg", class: "landing-pics", alt: "person in art shop") %>
 		      <div class="carousel-caption">
 		      	<div class="full-width">
 			        <h1>Allow us to curate a travel itinerary  that fits your style</h1>
@@ -32,7 +32,7 @@
 		    </div>
 
 		    <div class="item">
-		    	<%= image_tag("beach-pic.jpg", alt: "person on beach") %>
+		    	<%= image_tag("beach-pic.jpg", class: "landing-pics", alt: "person on beach") %>
 		      <div class="carousel-caption">
 		      	<div class="full-width">
 			        <h1>Travelling leaves you speechless, then turns you into a storyteller</h1>
@@ -42,10 +42,10 @@
 		    </div>
 
 		    <div class="item">
-		    	<%= image_tag("historic.jpg", alt: "stairs from historic slave castles") %>
+		    	<%= image_tag("historic.jpg", class: "landing-pics", alt: "stairs from historic slave castles") %>
 		      <div class="carousel-caption">
 		      	<div class="full-width">
-			        <h1>Explore. Dream. Discover</h1>
+			        <h1>Explore. Dream. Discover.</h1>
 			        <p></p>
 			      </div>
 		      </div>
@@ -58,8 +58,12 @@
 
 <section class="row blog-content content">
 	
-	<h1> Recent Posts </h1>
-	<h2> Blog </h2>
+	<div class="arrow bounce">
+      <a href="#bg-first" data-target="bg-first"></a>
+    </div> <!--/.arrow bounce-->
+	<div class="post-banner" id="bg-first">
+		<h2> See Our Blog Posts </h2>
+	</div>
 	<div class="col-xs-12 col-md-4 b-post">
 		<% if !@last.nil? %>
 			<%= image_tag "#{@last.blog_pic.thumb.url}", class: "index-thumbnails", alt: "vacation thumbnail pic" %><br>
@@ -83,7 +87,9 @@
 	</div>
 </section>
 <section class="row video-content content">
-	<h2> Video </h2>
+	<div class="post-banner">
+		<h2> See Our Videos </h2>
+	</div>
 	<div class="col-xs-12 col-md-4">			
 		<iframe width="375" height="250" src="https://www.youtube.com/embed/WaXKMcFV1EQ" frameborder="0" allowfullscreen></iframe>
 		<h3> My Video </h3>
@@ -101,7 +107,9 @@
 	</div>
 </section>
 <section class="row social-content content">
-	<h2> Stay In Touch </h2>
+	<div class="post-banner">
+		<h2> Let's Stay In Touch </h2>
+	</div>
 	<div class="col-xs-4 col-md-4 col-md-offset-1">
 		<h4> Latest Facebook Posts </h4>
 		<div class="fb-page" data-href="https://www.facebook.com/Virtual-Nomads-257068121132395/" data-tabs="timeline" data-width="410" data-height="500" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Virtual-Nomads-257068121132395/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Virtual-Nomads-257068121132395/">Virtual Nomads</a></blockquote></div>

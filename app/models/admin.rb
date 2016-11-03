@@ -5,4 +5,5 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :blog_posts
+  has_many :video_posts
 end

@@ -12,13 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
 //= bootstrap.min.js
 //= require ckeditor/init
 //= require_tree .
 
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
 	$(".full-width").fadeIn(2500);
 
 	$(".index-thumbnails").hover(function(){
@@ -49,5 +48,24 @@ $(document).on('turbolinks:load', function(){
 		  $(this).animate({height: 96, width: 96},"fast");
 		}
 	);
+
+	$(".search").on("click", function(event){
+		 event.preventDefault(); // don't trigger default
+
+		 var searched = $(".search").val();
+
+		 $("#search-word").val(searched);
+	});
+
+	var $root = $('html, body');
+    $('.arrow a').click(function() {
+        var href = $.attr(this, 'href');
+        $root.animate({
+            scrollTop: $(href).offset().top -55
+        }, 500, function () {
+            window.location.hash = href;
+        });
+        return false;
+    });
 
 });

@@ -3,7 +3,12 @@ class BlogPostsController < ApplicationController
 	before_action :authenticate_admin!, only: [:new, :edit]
 
 	def index
-	  @blog_posts = BlogPost.order(id: :desc)
+		@categories = Category.all
+		if params[:search]
+			@blog_posts = BlogPost.search(params[:search]).order(id: :desc).page(params[:page]).per(10)
+		else
+			@blog_posts = BlogPost.all.order(id: :desc).page(params[:page]).per(10)
+		end
 	end
 
 	def new
@@ -14,20 +19,6 @@ class BlogPostsController < ApplicationController
 
 	def edit
 		 @blog_post = BlogPost.find(params[:id])
-	end
-
-	def update
-	@blog_post = BlogPost.find(params[:id])
-    if @blog_post.update_attributes(blog_post_params)
-      render 'show'  
-    else
-      render 'edit'
-    end
-	end
-
-	def show
-		@blog_post = BlogPost.find(params[:id])
-		
 	end
 
 	def create
@@ -44,10 +35,25 @@ class BlogPostsController < ApplicationController
 		puts @blog_post.errors.inspect
 	end
 
+	def update
+		@blog_post = BlogPost.find(params[:id])
+	    if @blog_post.update_attributes(blog_post_params)
+	      render 'show'  
+	    else
+	      render 'edit'
+	    end
+	end
+
+	def show
+		@blog_post = BlogPost.find(params[:id])	
+	end
+
+
+
 private
 
   def blog_post_params
-  	params.require(:blog_post).permit(:title, :content, :posted_by, :comments, :blog_pic, {categorizations_attributes: [:category_id, :category_name]})
+  	params.require(:blog_post).permit(:title, :content, :posted_by, :comments, :blog_pic, {categorizations_attributes: [:id, {:category_id => []}, :category_name]})
   end
 
 end

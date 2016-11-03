@@ -8,4 +8,15 @@ class BlogPost < ApplicationRecord
 	accepts_nested_attributes_for :comments
 	mount_uploader :blog_pic, BlogPicUploader
 
+	if Rails.env.development?
+		def self.search(search)
+			joins(:categories).where(["category_name LIKE ?", "%#{search}%"])
+		end
+	end
+
+	if Rails.env.production?
+		def self.search(search)
+			joins(:categories).where(["category_name ILIKE ?", "%#{search}%"])
+		end
+	end
 end

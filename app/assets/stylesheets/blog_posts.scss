@@ -2,7 +2,51 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.sidebar{
+	font-size: 18px;
+}
+
+.new-bg-button{
+	margin-top: 20px;
+}
+
+.bg-image{
+	text-align: center;
+}
+
+.bg-return{
+	margin-top: 20px;
+	margin-bottom: 20px !important;
+}
+
+.bg-thumb-pic{
+	border-radius: 10px;
+}
+
+.bg-title-posted{
+	color: gray;
+}
+
+.bg-title-posted span{
+	font-weight: bold;
+	font-size: 24px;
+	color: black;
+	margin-right: 20px;
+}
+
 .comments-section{
 	border: 0.2px solid black;
 	border-radius: 5px;
+}
+
+.show-posted > p > span{
+	font-weight: bolder;
+}
+
+.show-title{
+	font-family: 'Shadows Into Light Two', cursive;
+}
+
+.main-bg-title, .sidebar > h1{
+	font-family: 'Shadows Into Light Two', cursive;
 }

@@ -6,14 +6,8 @@ class HomePagesController < ApplicationController
 		@third = BlogPost.offset(2).last
 	end
 
-	def blog_video
-		@blog_posts = BlogPost.all.order(id: :desc).page(params[:page]).per(10)
-		
-		if params[:search]
-			@categories = Category.search(params[:search])
-		else
-			@categories = Category.all
-		end
+	def video_posts
+		@video_posts = VideoPost.all.order(id: :desc).page(params[:page]).per(10)
 	end
 end
 

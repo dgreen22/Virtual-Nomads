@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021172404) do
+ActiveRecord::Schema.define(version: 20161025040050) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -98,6 +98,18 @@ ActiveRecord::Schema.define(version: 20161021172404) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
+  end
+
+  create_table "video_posts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "video"
+    t.text     "video_text"
+    t.string   "posted_by"
+    t.text     "comments"
+    t.integer  "admin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_video_posts_on_admin_id"
   end
 
 end

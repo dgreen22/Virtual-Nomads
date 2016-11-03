@@ -1,0 +1,2 @@
+class VideoPostsController < ApplicationController
+end

@@ -1,26 +1,42 @@
 <div class="row">
-	<div class="col-md-8 col-md-offset-2">
-			<%= link_to "Return to Blogs", '/blog-video', class: "btn btn-primary" %><br>
-			<div class="full-blog">	  
-			  <%= image_tag @blog_post.blog_pic %><br>
-			  <% @blog_post.categories.each do |category| %>
-			    <%= category.category_name %>
-			  <% end %><br>
-			  <%= @blog_post.title %><br>
-			  <%= simple_format(@blog_post.content) %><br>
-			  <%= @blog_post.posted_by %><br>
-				<%= @blog_post.created_at.strftime("%B %Y") %><br>
-		    <%= link_to edit_blog_post_path(@blog_post) do %>
-			    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
-			  <% end %><br>
-			  	<%= link_to "Leave a Comment",new_blog_post_comment_path(@blog_post), class: "btn btn-danger" %><br>
+	<div class= "col-md-12">
+		<%= link_to "Return to Blogs", '/blogs', class: "btn btn-warning bg-return" %><br>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="full-blog">
+		  <div class="bg-image">	  
+		  	<%= image_tag @blog_post.blog_pic %><br>
 		  </div>
-		  <div class="comments-section"> 
-			  <% @blog_post.comments.each do |com| %>
-			  <h4> Comments: </h4>
-				  By: <%= com.comment_content_creator %><br>
-				  <p><%= com.comment_content %></p>
-			  <% end %>
-			</div><!--/comments-section-->
+		  <div class="show-cats">
+		    <% @blog_post.categories.each do |category| %>
+		    <%= category.category_name %>
+		    <% end %>
+		  </div>
+		  <div class="show-title">
+		    <h2><%= (@blog_post.title).titleize %></h2>
+		  </div>
+		  <div class="show-posted">
+		    <p> <span>Posted By:</span> <%= @blog_post.posted_by.titleize %>
+		    </p>
+		  </div>
+		  <div class="show-created">
+			<p> <%= @blog_post.created_at.strftime("%B %Y") %>
+			</p>
+		  </div>
+		  <%= raw(@blog_post.content) %><br>
+	      <%= link_to edit_blog_post_path(@blog_post) do %>
+		    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
+		  <% end %><br>
+		  	<%= link_to "Leave a Comment",new_blog_post_comment_path(@blog_post), class: "btn btn-primary" %><br>
+		</div><!--/full-blog-->
+		<div class="comments-section"> 
+		  <% @blog_post.comments.each do |com| %>
+		  <h4> Comments: </h4>
+			  By: <%= com.comment_content_creator %><br>
+			  <p><%= com.comment_content %></p>
+		  <% end %>
+		</div><!--/comments-section-->
 	</div>
 </div>

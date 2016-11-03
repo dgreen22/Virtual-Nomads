@@ -1,26 +1,29 @@
 <div class="row">
 	<div class="col-md-6 col-md-offset-3 blog-submit">
-		<%= form_for @blog_post do |b| %>
-			<%= b.label :title %>
-			<%= b.text_field :title %><br>
+	<%= form_for @blog_post do |b| %>
+		<%= b.label :title %>
+		<%= b.text_field :title %><br>
 
-			<%= b.fields_for :categorizations do |cat| %>
-			  <%= cat.label :category_name, "Category 1" %>
-			  <%= cat.collection_select(:category_id, Category.all, :id, :category_name, blank: "Select Category") %>
-			<%= link_to "Add Categories", new_category_path %>
-			  <br>
-			<% end %>
+		<%= b.fields_for :categorizations do |cat| %>
+		  <%= cat.label :category_name, "Category 1" %>
+		  <%= cat.collection_select(:category_id, Category.all, :id, :category_name, {blank: "Select Category"},{multiple: true}) %>
+		<%= link_to "Add Categories", new_category_path %>
+		  <br>
+		<% end %>
 
-			<%= b.label :posted_by %>
-			<%= b.text_field :posted_by %><br>
+		<%= b.label :posted_by %>
+		<%= b.select :posted_by, options_for_select(["Jessica Opoku-Amoah"]), {include_blank: false} %>  
 
-			<%= b.label :content %>
-			<%= b.cktext_area :content, rows: "20", cols: "120" %><br>
+		<%= b.label :posted_by %>
+		<%= b.text_field :posted_by %><br>
 
-			<%= b.label :blog_pic, "Picture" %>
-			<%= b.file_field :blog_pic %>
+		<%= b.label :content %>
+		<%= b.cktext_area :content, rows: "20", cols: "120" %><br>
 
-			<%= b.submit "Submit", class: "btn btn-primary" %>
+		<%= b.label :blog_pic, "Picture" %>
+		<%= b.file_field :blog_pic %>
+
+		<%= b.submit "Submit", class: "btn btn-primary" %>
 	  <% end %>
 	</div>
 </div>

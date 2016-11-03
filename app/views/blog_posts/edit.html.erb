@@ -5,8 +5,8 @@
 			<%= b.text_field :title %><br>
 
 			<%= b.fields_for :categorizations do |cat| %>
-			  <%= cat.label :category_name, "Category 1" %>
-			  <%= cat.collection_select(:category_id, Category.all, :id, :category_name, blank: "Select Category") %>
+			<%= cat.label :category_name, "Category 1" %>
+			<%= cat.collection_select(:category_id, Category.all, :id, :category_name, {blank: "Select Category"}) %>
 			<%= link_to "Add Categories", new_category_path %>
 			  <br>
 			<% end %>
@@ -15,7 +15,7 @@
 			<%= b.text_field :posted_by %><br>
 
 			<%= b.label :content %>
-			<%= b.text_area :content %><br>
+			<%= b.cktext_area :content, rows: "20", cols: "120" %><br>
 
 			<%= b.label :blog_pic, "Picture" %>
 			<%= b.file_field :blog_pic %>
