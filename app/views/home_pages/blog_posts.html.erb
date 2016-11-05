@@ -29,10 +29,10 @@
 						    <% end %>
 						  </div>
 						  <div class="bg-content">
-						  	<% if (simple_format(b.content)).length > 225 %> 
+						  	<% if (raw(b.content)).length > 225 %> 
 						  		<%= truncate(b.content, length: 225, omission: "...") {link_to "Read", blog_post_path(b)} %>
 					  		<% else %>
-					  			<%= simple_format(b.content) %>
+					  			<%= raw(b.content) %>
 					  		<% end %>
 					  	</div><!--/bg-content-->
 				  	<% if admin_signed_in? %>			 

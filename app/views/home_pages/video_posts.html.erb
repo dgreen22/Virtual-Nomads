@@ -19,10 +19,10 @@
 							  Posted By: <%= b.posted_by %></h4>
 						  </div>
 						  <div class="bg-content">
-						  	<% if (simple_format(b.video_text)).length > 225 %> 
+						  	<% if (raw(b.video_text)).length > 225 %> 
 						  		<%= truncate(b.video_text, length: 225, omission: "...") {link_to "Read",video_post_path(b)} %>
 					  		<% else %>
-					  			<%= simple_format(b.video_text) %>
+					  			<%= raw(b.video_text) %>
 					  		<% end %>
 					  	</div>
 					  	<% if admin_signed_in? %>			 
