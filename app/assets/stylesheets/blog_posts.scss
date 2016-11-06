@@ -35,8 +35,9 @@
 }
 
 .comments-section{
-	border: 0.2px solid black;
-	border-radius: 5px;
+	border: 0.2px solid gray;
+	border-radius: 2px;
+	color: gray;
 }
 
 .show-posted > p > span{
@@ -47,7 +48,7 @@
 	font-family: 'Shadows Into Light Two', cursive;
 }
 
-.main-bg-title, .sidebar > h1{
+.main-bg-title, .sidebar > h1, .search-title{
 	font-family: 'Shadows Into Light Two', cursive;
 }
 

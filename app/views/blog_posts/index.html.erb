@@ -6,7 +6,7 @@
 			<% end %>
 
 			<% if params[:search] %>
-				<h2> Search Results for "<%= params[:search] %>". </h2>
+				<h2 class="search-title"> Category "<%= params[:search] %>"</h2>
 			<% else %>
 			<div class="main-bg-title">		
 				<h1> Blog Posts </h1>
@@ -23,7 +23,7 @@
 					</div><!--/col-md-6-->
 					<div class="col-md-6">
 						  <div class="bg-title-posted">
-							  <h4><span><%= link_to (b.title).titleize, blog_post_path(b) %></span>
+							  <h4><span><%= link_to (b.title).titleize, blog_post_path(b) %></span><br>
 							  Posted By: <%= b.posted_by %></h4>
 						  </div>
 						  <div class="bg-category">
@@ -37,14 +37,15 @@
 					  		<% else %>
 					  			<%= raw(b.content) %>
 					  		<% end %>
-					  	</div><!--/bg-content-->
+					  	  </div><!--/bg-content-->
 				  	  <% if admin_signed_in? %>			 
 						  <%= link_to edit_blog_post_path(b) do %>
 						    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
 						  <% end %><br>
+						  <%= link_to "Delete Post",blog_post_path(b), method: :delete, data: {confirm: "Are you sure you would like to delete this post?"}, class: "btn btn-danger" %><br>
 					  <% end %>
 					  <p> Comments: <%= b.comments.count %> </p><br>
-					</div><!--/col-md-6-->				 	
+					</div><!--/col-md-6-->	
 				</div><!--/row-->
 				<br>
 				<% end %>

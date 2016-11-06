@@ -4,10 +4,10 @@ class HomePagesController < ApplicationController
 		@last = BlogPost.last
 		@second = BlogPost.offset(1).last
 		@third = BlogPost.offset(2).last
+		@last_vid = VideoPost.last
+		@second_vid = VideoPost.offset(1).last
+		@third_vid = VideoPost.offset(2).last
 	end
-
-	def video_posts
-		@video_posts = VideoPost.all.order(id: :desc).page(params[:page]).per(10)
-	end
+	
 end
 

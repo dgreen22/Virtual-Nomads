@@ -48,12 +48,16 @@ class BlogPostsController < ApplicationController
 		@blog_post = BlogPost.find(params[:id])	
 	end
 
-
+	def destroy
+		BlogPost.find(params[:id]).destroy
+	    flash[:success] = "Post deleted"
+	    redirect_to blog_posts_url
+	end
 
 private
 
   def blog_post_params
-  	params.require(:blog_post).permit(:title, :content, :posted_by, :comments, :blog_pic, {categorizations_attributes: [:id, {:category_id => []}, :category_name]})
+  	params.require(:blog_post).permit(:title, :content, :posted_by, :blog_pic, {categorizations_attributes: [:id, {:category_id => []}, :category_name]})
   end
 
 end

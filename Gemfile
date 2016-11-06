@@ -37,6 +37,8 @@ gem 'devise'
 
 gem 'ckeditor'
 
+gem "recaptcha", require: "recaptcha/rails"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

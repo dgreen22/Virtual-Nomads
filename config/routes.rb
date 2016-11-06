@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 	get '/blogs' => 'blog_posts#index'
 
-	get '/video-posts' => 'home_pages#video_posts'
+	get '/videos' => 'video_posts#index'
 
 	get '/admin' => 'devise/sessions#new'
 	

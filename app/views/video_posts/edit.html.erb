@@ -1,0 +1,20 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3 blog-submit">
+	<%= form_for @video_post do |b| %>
+		<%= b.label :title, "Title:", class: "input-label" %>
+		<%= b.text_field :title %><br>
+
+		<%= b.label :posted_by, "Posted By:", class: "input-label" %>
+		<%= b.select :posted_by, options_for_select(["Jessica Opoku-Amoah"]), {include_blank: false} %><br>  
+
+		<%= b.label :video_text, "Video Text" %>
+		<%= b.text_field :video_text %><br>
+
+		<%= b.label :video, "Enter Video IFrame Below", class: "input-label" %>
+			<p> Instructions: After video uploaded to YouTube, on YouTube video page, click on 'Share', then click on 'Embed', then copy and paste only the link inside the quotation marks after "src=".<br>  For example, if you saw "< iframe width="560" height="315" src="<b>https://www.youtube.com/embed/xXH5agV7skw</b>" frameborder="0" allowfullscreen></ iframe>", you would only copy the bolded section and paste that into the URL box for IFrame below.</p>
+		<%= b.cktext_area :video, rows: "20", cols: "20" %><br>
+
+		<%= b.submit "Submit", class: "btn btn-primary" %>
+	  <% end %>
+	</div>
+</div>

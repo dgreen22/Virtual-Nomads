@@ -11,7 +11,7 @@
 		  </div>
 		  <div class="show-cats">
 		    <% @blog_post.categories.each do |category| %>
-		    <%= category.category_name %>
+		      <%= category.category_name %>
 		    <% end %>
 		  </div>
 		  <div class="show-title">
@@ -26,17 +26,22 @@
 			</p>
 		  </div>
 		  <%= raw(@blog_post.content) %><br>
+		  <% if admin_signed_in? %>	
 	      <%= link_to edit_blog_post_path(@blog_post) do %>
-		    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
-		  <% end %><br>
+		    	<i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
+		  	<% end %><br>
+		  <% end %>
 		  	<%= link_to "Leave a Comment",new_blog_post_comment_path(@blog_post), class: "btn btn-primary" %><br>
 		</div><!--/full-blog-->
-		<div class="comments-section"> 
-		  <% @blog_post.comments.each do |com| %>
-		  <h4> Comments: </h4>
+		
+		<h4> Comments: </h4>
+	  <% @blog_post.comments.each do |com| %>
+		  <div class="comments-section"> 		  
 			  By: <%= com.comment_content_creator %><br>
+			  <p> <%= com.created_at.strftime("%D " "at " "%r") %>
+			</p>
 			  <p><%= com.comment_content %></p>
-		  <% end %>
-		</div><!--/comments-section-->
+		  </div><!--/comments-section-->
+	  <% end %>		
 	</div>
 </div>

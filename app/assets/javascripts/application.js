@@ -49,14 +49,6 @@ $(document).ready(function(){
 		}
 	);
 
-	$(".search").on("click", function(event){
-		 event.preventDefault(); // don't trigger default
-
-		 var searched = $(".search").val();
-
-		 $("#search-word").val(searched);
-	});
-
 	var $root = $('html, body');
     $('.arrow a').click(function() {
         var href = $.attr(this, 'href');

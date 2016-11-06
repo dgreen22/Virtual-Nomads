@@ -1,0 +1,42 @@
+<div id="blog-video">
+	<div class="row">
+		<div class="col-md-7 col-md-offset-2 entry-info">
+			<% if admin_signed_in? %>
+				<p><%= link_to "Submit New Video Post", new_video_post_path, class: "btn btn-primary new-bg-button" %></p>	
+			<% end %>	
+			<h1> Video Posts </h1>	
+			<% @video_posts.each do |b| %>
+				<div class="row">	
+					<div class="col-md-6 vid-main">
+						<%= raw(b.video) %>
+					</div>
+					<div class="col-md-4">
+					  <div class="bg-content"> 			
+				  		By: <%= b.posted_by %>
+				  	  </div><!--/bg-content-->
+					  <div class="bg-title-posted">
+						  <h4><%= b.title %><br>
+						  	<%= b.video_text %></h4>
+					  </div><!--/bg-title-posted-->
+					  
+				  	  <% if admin_signed_in? %>			 
+						  <%= link_to edit_video_post_path(b) do %>
+						    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
+						  <% end %>
+						  <%= link_to "Delete Post",video_post_path(b), method: :delete, data: {confirm: "Are you sure you would like to delete this post?"}, class: "btn btn-danger" %>
+						  <br>
+					  <% end %>
+					</div><!--/col-md-6-->	 	
+				</div><!--/row-->
+				<br>
+			<% end %>
+			<%= paginate @video_posts %>	
+		</div><!--/entry-info-->
+
+		<div class="col-md-2 sidebar">
+			<h1>  </h1>
+				
+		</div><!--/sidebar-->
+	</div><!--/row-->
+</div><!--/blog-video-->
+
