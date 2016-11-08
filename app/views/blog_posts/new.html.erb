@@ -4,15 +4,18 @@
 		<%= b.label :title, "Title:", class: "input-label" %>
 		<%= b.text_field :title %><br>
 
-		<%= b.collection_select(:category_ids, Category.all, :id, :category_name, {blank: "Select Category"},{multiple: true}) %>
+		<%= b.label :category, "Select Categories:" %>
+		<%= b.collection_select(:category_ids, Category.all, :id, :category_name, {blank: "Select Category"},{multiple: true}) %><br>
 
 		<%= b.label :posted_by, "Posted By:", class: "input-label" %>
 		<%= b.select :posted_by, options_for_select(["Jessica Opoku-Amoah"]), {include_blank: false} %><br>  
 
+		<%= link_to "Add New Category", new_category_path, class: "btn btn-info" %><br>
+
 		<%= b.label :blog_pic, "Main Thumbnail Picture:", class: "input-label" %>
 		<%= b.file_field :blog_pic %>
 
-		<%= b.label :content, "Enter Content Below:", class: "input-label" %>
+		<%= b.label :content, "Enter Content Below: (Note: ensure you do not insert a picture or video within the first 175 characters of your blog post, or it will distort the layout of your blog post page)", class: "input-label" %>
 		<%= b.cktext_area :content, rows: "20", cols: "120" %><br>
 
 		<%= b.submit "Submit", class: "btn btn-primary" %>
