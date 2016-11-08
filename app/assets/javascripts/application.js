@@ -15,6 +15,7 @@
 //= require bootstrap-sprockets
 //= bootstrap.min.js
 //= require ckeditor/init
+//= require ckeditor/config
 //= require_tree .
 
 $(document).ready(function(){
