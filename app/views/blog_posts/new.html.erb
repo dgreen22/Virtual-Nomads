@@ -4,12 +4,7 @@
 		<%= b.label :title, "Title:", class: "input-label" %>
 		<%= b.text_field :title %><br>
 
-		<%= b.fields_for :categorizations do |cat| %>
-		  <%= cat.label :category_name, "Category:", class: "input-label" %>
-		  <%= cat.collection_select(:category_id, Category.all, :id, :category_name, {blank: "Select Category"},{multiple: true}) %>
-		<%= link_to "Add Categories", new_category_path %>
-		  <br>
-		<% end %>
+		<%= b.collection_select(:category_ids, Category.all, :id, :category_name, {blank: "Select Category"},{multiple: true}) %>
 
 		<%= b.label :posted_by, "Posted By:", class: "input-label" %>
 		<%= b.select :posted_by, options_for_select(["Jessica Opoku-Amoah"]), {include_blank: false} %><br>  

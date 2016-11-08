@@ -35,9 +35,12 @@
 
 .full-width > h1{
 	font-size: 48px;
-	font-family: 'Shadows Into Light Two', cursive;
 	color: white;
 	text-align: left;
+}
+
+#fourth > h1{
+	font-size: 58px;
 }
 
 /********* Bounce Arrow ***********/
@@ -94,7 +97,7 @@
   position: absolute;
   left: 50%;
   margin-left: -20px;
-  margin-top: 20px;
+  margin-top: -10px;
   width: 40px;
   height: 40px;
   background-image: url(arrow-down.png);
@@ -108,14 +111,6 @@
 }
 
 /************* Blog ************/
-
-.blog-content, .video-content, .social-content{
-	text-align: center;
-}
-
-.content{
-	font-family: 'Shadows Into Light Two', cursive;
-}
 
 .blog-content h1{
 	font-size: 40px;
@@ -132,15 +127,13 @@
 }
 
 .post-banner{
-	width: 100%;
-	background-color: rgba(0,0,0,0.5);
-	color: white;
-	margin-bottom: 30px;
-	height: 50px;
+	text-align: left;
+	padding-left: 15px;
 }
 
 .post-banner > h2{
-	padding-top: 10px;
+	text-align: left;
+	font-size: 42px;
 }
 
 .index-thumbnails{
@@ -152,18 +145,6 @@
 
 /******** Video Section ********/
 
-.video-content{
-	
-}
-
-.video-content{
-	padding-top: 30px;
-	padding-bottom: 30px;
-}
-
-.content{
-	margin-top: 10px;
-}
 
 /*********** Modal ***********/
 
@@ -223,7 +204,10 @@
 
 .about-title h1{
 	text-align: left;
-	font-family: 'Shadows Into Light Two', cursive;
+}
+
+.about-title{
+	margin-bottom: 50px;
 }
 
 .quote{
@@ -242,11 +226,12 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	min-height: 768px;
 }
 
 .bio-text > h1{
+	margin-top: 50px;
 	color: white;
-	font-family: 'Shadows Into Light Two', cursive;
 }
 
 .bio-text > p{
@@ -298,6 +283,10 @@
 	margin-bottom: 5px;
 	height: 96px; 
 	width: 96px;
+}
+
+.follow, .mail-post, .fb-post{
+	text-align: center;
 }
 
 .nex-tico{

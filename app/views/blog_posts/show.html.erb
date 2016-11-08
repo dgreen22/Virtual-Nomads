@@ -9,17 +9,17 @@
 		  <div class="bg-image">	  
 		  	<%= image_tag @blog_post.blog_pic %><br>
 		  </div>
-		  <div class="show-cats">
-		    <% @blog_post.categories.each do |category| %>
-		      <%= category.category_name %>
-		    <% end %>
-		  </div>
 		  <div class="show-title">
 		    <h2><%= (@blog_post.title).titleize %></h2>
 		  </div>
 		  <div class="show-posted">
 		    <p> <span>Posted By:</span> <%= @blog_post.posted_by.titleize %>
 		    </p>
+		  </div>
+		  <div class="show-cats">
+		    Categories:<% @blog_post.categories.each do |category| %>
+		      <%= category.category_name %>
+		    <% end %>
 		  </div>
 		  <div class="show-created">
 			<p> <%= @blog_post.created_at.strftime("%B %Y") %>
@@ -35,13 +35,19 @@
 		</div><!--/full-blog-->
 		
 		<h4> Comments: </h4>
-	  <% @blog_post.comments.each do |com| %>
-		  <div class="comments-section"> 		  
-			  By: <%= com.comment_content_creator %><br>
-			  <p> <%= com.created_at.strftime("%D " "at " "%r") %>
-			</p>
-			  <p><%= com.comment_content %></p>
-		  </div><!--/comments-section-->
-	  <% end %>		
+		<% if @blog_post.comments.exists? %>
+		  <% @blog_post.comments.each do |com| %>
+			  <div class="comments-section"> 		  
+				  By: <%= com.comment_content_creator %><br>
+				  <p> <%= com.created_at.strftime("%D " "at " "%r") %>
+				</p>
+				  <p><%= com.comment_content %></p>
+			  </div><!--/comments-section-->
+		  <% end %>
+		<% else %>
+		 <div class="comments-section"> 
+			<p> Be the first to leave a comment! </p>
+		  </div>
+		<% end %>		
 	</div>
 </div>

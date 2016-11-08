@@ -23,8 +23,28 @@
 	border-radius: 10px;
 }
 
+.bg-category #c-name{
+	text-decoration: underline;
+	color: gray;
+	margin-left: 5px;
+    display: block;
+    float: left;
+}
+
 .bg-title-posted{
 	color: gray;
+}
+
+.comment-count{
+	font-weight: bolder;
+	margin-top: 5px;
+	font-size: 16px;
+	color: gray;
+}
+
+#c-title{
+	float: left;
+	font-weight: bolder;
 }
 
 .bg-title-posted span{
@@ -32,6 +52,7 @@
 	font-size: 24px;
 	color: black;
 	margin-right: 20px;
+	margin-bottom: 20px;
 }
 
 .comments-section{
@@ -44,12 +65,9 @@
 	font-weight: bolder;
 }
 
-.show-title{
-	font-family: 'Shadows Into Light Two', cursive;
-}
-
-.main-bg-title, .sidebar > h1, .search-title{
-	font-family: 'Shadows Into Light Two', cursive;
+.show-cats{
+	font-weight: bolder;
+	font-size: 16px;
 }
 
 /********* New ********/

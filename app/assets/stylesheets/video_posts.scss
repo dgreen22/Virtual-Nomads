@@ -2,7 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .vid-main{
 	margin-right: 20px;
+}
+
+.vid-content{
+	color: gray;
+}
+
+.vid-content > h4{
+	font-weight: bold;
+	font-size: 24px;
+	color: black;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.vid-text{
+	color: gray;
 }

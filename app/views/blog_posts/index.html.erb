@@ -12,7 +12,7 @@
 				<h1> Blog Posts </h1>
 			</div><!--/main-bg-title-->
 			<% end %>		
-				<% @blog_posts.each do |b| %>
+			  <% @blog_posts.each do |b| %>
 				<div class="row">	
 					<div class="col-md-6">	
 					  <div class="bg-pic">
@@ -23,17 +23,20 @@
 					</div><!--/col-md-6-->
 					<div class="col-md-6">
 						  <div class="bg-title-posted">
-							  <h4><span><%= link_to (b.title).titleize, blog_post_path(b) %></span><br>
-							  Posted By: <%= b.posted_by %></h4>
+							  <h4><span><%= link_to (b.title).titleize, blog_post_path(b) %></span></h4>
+							  <h4> Posted By: <%= b.posted_by %></h4>
 						  </div>
 						  <div class="bg-category">
-						    <% b.categories.each do |ctg| %>
+						    <span id="c-title">Categories: </span><% b.categories.each do |ctg| %>
+						    <span id="c-name">
 						   	  <%= (ctg.category_name).titleize %>
-						    <% end %>
+						   	  </span>
+						    <% end %><br>
+
 						  </div>
 						  <div class="bg-content">
-						  	<% if (raw(b.content)).length > 225 %> 
-						  		<%= truncate(raw(b.content), length: 225, omission: "...") {link_to "Read", blog_post_path(b)} %>
+						  	<% if (raw(b.content)).length > 175 %> 
+						  		<%= truncate(raw(b.content), length: 175, omission: "...") {link_to "Read", blog_post_path(b)} %>
 					  		<% else %>
 					  			<%= raw(b.content) %>
 					  		<% end %>
@@ -44,11 +47,11 @@
 						  <% end %><br>
 						  <%= link_to "Delete Post",blog_post_path(b), method: :delete, data: {confirm: "Are you sure you would like to delete this post?"}, class: "btn btn-danger" %><br>
 					  <% end %>
-					  <p> Comments: <%= b.comments.count %> </p><br>
+					  <p class="comment-count"> Comments: <%= b.comments.count %> </p><br>
 					</div><!--/col-md-6-->	
 				</div><!--/row-->
 				<br>
-				<% end %>
+			  <% end %>
 			<%= paginate @blog_posts %>	
 		</div><!--/entry-info-->
 

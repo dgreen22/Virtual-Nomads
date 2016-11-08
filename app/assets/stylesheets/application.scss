@@ -18,7 +18,7 @@
  @import "bootstrap";
 
 body{
-	font-family: 'Catamaran', sans-serif;
+	font-family: 'Cinzel', serif;
 	padding-top: 50px;
 	padding-bottom: 50px;
 	position: relative;
@@ -32,6 +32,20 @@ html{
     overflow-x: hidden;
 }
 
+section{
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#home{
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.video-content{
+	background: rgb(240,240,240); 
+}
+
 .btn-primary,
 .btn-primary:hover,
 .btn-primary:active,
@@ -39,6 +53,15 @@ html{
 .btn-primary:focus {
     background-color: rgb(46, 184, 80);
     border-color: rgb(46, 184, 80);
+}
+
+.btn-book,
+.btn-book:hover,
+.btn-book:active,
+.btn-book:visited,
+.btn-book:focus {
+    background-color: black;
+    border-color: black;
 }
 
 .navbar-brand{
@@ -102,7 +125,6 @@ html{
 
 .navbar-home{
 	background-color: rgba(46, 184, 80,0.7);
-	font-family: 'Shadows Into Light Two', cursive;
 }
 
 /****** Footer *******/
