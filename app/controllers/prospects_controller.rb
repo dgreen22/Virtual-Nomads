@@ -9,6 +9,7 @@ class ProspectsController < ApplicationController
 		respond_to do |format|
 			if @prospect.save
 			  flash[:success] = "Thank you for your interest in booking! We'll be in touch shortly."
+			  AdminNotifier.send_prospect_notifier(@prospect).deliver
 			  format.html { redirect_to new_prospect_path }
 	          format.json { render :new, location: new_prospect_path }
 	        else

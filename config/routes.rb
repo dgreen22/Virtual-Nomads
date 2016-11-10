@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'admin/name'
+
+  get 'admin/email'
+
+  get 'admin/login'
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :admins
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

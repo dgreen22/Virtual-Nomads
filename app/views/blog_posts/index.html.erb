@@ -14,16 +14,16 @@
 			<% end %>		
 			  <% @blog_posts.each do |b| %>
 				<div class="row">	
-					<div class="col-md-6">	
-					  <div class="bg-pic">
+					<div class="col-xs-12 col-md-6">	
+					  
 					  	<%= link_to blog_post_path(b) do %> 
-					  	<%= image_tag b.blog_pic.url(:thumb), class: "bg-thumb-pic", alt: "blog post thumbnail" %>
+					  	<%= image_tag b.blog_pic.url(:thumb), class: "bg-thumb-pic img-responsive", alt: "blog post thumbnail" %>
 					  	<% end %>
-					  </div><!--/bg-pic-->
+					 
 					</div><!--/col-md-6-->
-					<div class="col-md-6">
+					<div class="col-xs-12 col-md-6">
 						  <div class="bg-title-posted">
-							  <h4><span><%= link_to (b.title).titleize, blog_post_path(b) %></span></h4>
+							  <h4><span><%= link_to truncate(b.title.titleize, :length => 32), blog_post_path(b) %></span></h4>
 							  <h4> Posted By: <%= b.posted_by %></h4>
 						  </div>
 						  <div class="bg-category">
@@ -36,7 +36,7 @@
 						  </div>
 						  <div class="bg-content">
 						  	<% if (raw(b.content)).length > 175 %> 
-						  		<%= truncate(raw(b.content), length: 175, omission: "...") {link_to "Read", blog_post_path(b)} %>
+						  		<%= truncate(raw(b.content), length: 175, omission: "...") {link_to "Read More", blog_post_path(b)} %>
 					  		<% else %>
 					  			<%= raw(b.content) %>
 					  		<% end %>
@@ -44,12 +44,13 @@
 				  	  <% if admin_signed_in? %>			 
 						  <%= link_to edit_blog_post_path(b) do %>
 						    <i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
-						  <% end %><br>
+						  <% end %>
 						  <%= link_to "Delete Post",blog_post_path(b), method: :delete, data: {confirm: "Are you sure you would like to delete this post?"}, class: "btn btn-danger" %><br>
 					  <% end %>
 					  <p class="comment-count"> Comments: <%= b.comments.count %> </p><br>
-					</div><!--/col-md-6-->	
+					</div><!--/col-md-6-->				
 				</div><!--/row-->
+				<hr>
 				<br>
 			  <% end %>
 			<%= paginate @blog_posts %>	

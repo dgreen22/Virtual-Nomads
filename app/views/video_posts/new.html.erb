@@ -11,7 +11,7 @@
 		<%= b.text_field :video_text %><br>
 
 		<%= b.label :video, "Enter Video IFrame Below", class: "input-label" %>
-			<p> Instructions: After video uploaded to YouTube, on YouTube video page, click on 'Share', then click on 'Embed', then copy and paste only the link inside the quotation marks after "src=".<br>  For example, if you saw "< iframe width="560" height="315" src="<b>https://www.youtube.com/embed/xXH5agV7skw</b>" frameborder="0" allowfullscreen></ iframe>", you would only copy the bolded section and paste that into the URL box for IFrame below.</p>
+			<p class="instruct"> Instructions: <br> 1) After video uploaded to YouTube, on YouTube video page, click on 'Share', then click on 'Embed', then copy and paste only the link inside the quotation marks after "src=".    For example, if you saw "< iframe width="560" height="315" src="<b><u>https://www.youtube.com/embed/xXH5agV7skw</u></b>" frameborder="0" allowfullscreen></ iframe>", you would only copy the bolded/underlinded section and paste that into the URL box for IFrame below.<br> 2) Ensure you make the size of the video/Iframe width: 375, height: 250</p>
 		<%= b.cktext_area :video, rows: "20", cols: "20" %><br>
 
 		<%= b.submit "Submit", class: "btn btn-primary" %>

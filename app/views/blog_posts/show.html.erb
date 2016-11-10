@@ -25,7 +25,9 @@
 			<p> <%= @blog_post.created_at.strftime("%B %Y") %>
 			</p>
 		  </div>
-		  <%= raw(@blog_post.content) %><br>
+		  <div class="show-content">
+		  	<h4><%= raw(@blog_post.content) %></h4><br>
+		  </div><!--/show-content-->
 		  <% if admin_signed_in? %>	
 	      <%= link_to edit_blog_post_path(@blog_post) do %>
 		    	<i class="glyphicon glyphicon-edit" aria-hidden="true"></i>Edit
