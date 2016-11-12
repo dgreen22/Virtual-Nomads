@@ -118,21 +118,21 @@
 		<h2> Stay In Touch </h2>
 		<h3> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h3>
 	</div>
-	<div class="col-xs-12 col-md-4 mail-post">
+	<div class="col-xs-12 col-md-4 mail-post scl">
 		<h3> Never Miss a post! </h3>
 		   <%= render partial: "mail_chimp_subscriber_form" %>
 		   <%= image_tag "ca-small-logo.jpg", class: "nex-tico", alt: "Nexion Logo" %>
 		   <%= image_tag "tico-logo.jpg", class: "nex-tico", alt: "Tico.ca Logo" %>
 	</div>
-	<div class="col-xs-6 col-md-4 fb-post">
+	<div class="col-xs-6 col-md-4 fb-post scl">
 		<h3> Latest Facebook Posts </h3>
 		<div class="fb-page" data-href="https://www.facebook.com/Virtual-Nomads-257068121132395/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Virtual-Nomads-257068121132395/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Virtual-Nomads-257068121132395/">Virtual Nomads</a></blockquote></div>
 	</div>
-	<div class="col-xs-6 col-md-4 follow">
+	<div class="col-xs-6 col-md-4 follow scl">
 		<h3> Follow Us</h3>
-		<%= link_to image_tag('facebook.png', class: "fb-button social img-responsive", alt: 'facebook logo'), "https://www.facebook.com/Virtual-Nomads-257068121132395/", target: '_blank' %><br>
-		<%= link_to image_tag("twitter.png", class: "tw-button social img-responsive", alt: "twitter logo"), "https://twitter.com/?lang=en-ca", target: "_blank" %><br>	
-		<%= link_to image_tag("instagram.png", class: "instagram-button social img-responsive", alt: "instagram logo"), "https://www.instagram.com/virtualnomads/", target: "_blank" %><br>
-		<%= image_tag "pinterest.png",class: "pinterest-button social img-responsive", alt: "pinterest logo" %><br>
+		<%= link_to image_tag('facebook.png', class: "fb-button social img-responsive center-block", alt: 'facebook logo'), "https://www.facebook.com/Virtual-Nomads-257068121132395/", target: '_blank' %><br>
+		<%= link_to image_tag("twitter.png", class: "tw-button social img-responsive center-block", alt: "twitter logo"), "https://twitter.com/?lang=en-ca", target: "_blank" %><br>	
+		<%= link_to image_tag("instagram.png", class: "instagram-button social img-responsive center-block", alt: "instagram logo"), "https://www.instagram.com/virtualnomads/", target: "_blank" %><br>
+		<%= image_tag "pinterest.png",class: "pinterest-button social img-responsive center-block", alt: "pinterest logo" %><br>
 	</div>
 </section>

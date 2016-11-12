@@ -299,6 +299,10 @@
 	margin: 15px;
 }
 
+.scl{
+  text-align: center;
+}
+
 @media (min-width: 300px) and (max-width: 767px){
   .landing-area{
       margin-top: 0;
@@ -319,14 +323,6 @@
 
   .mail-post{
     text-align: center;
-  }
-
-  .social{
-    margin: auto;
-  }
-
-  .follow{
-    margin: auto;
   }
 
   .quote > h3{

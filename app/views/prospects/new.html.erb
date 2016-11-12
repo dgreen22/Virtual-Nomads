@@ -17,11 +17,11 @@
 		    	<%= s.label :phone, class: "prospect-label" %>
 		    	<%= s.text_field :phone, class: "prospect-input" %>
 		    	<br />
-		    	<%= s.label :question_1, class: "prospect-label" %>
-		    	<%= s.text_field :question_1, class: "prospect-input" %> 	 
+		    	<%= s.label :question_1, "Comments/ Questions?", class: "prospect-label" %>
+		    	<%= s.text_area :question_1, class: "prospect-input" %> 	 
 		    	<br />
-		    	<%= s.label :question_2, class: "prospect-label" %>
-		    	<%= s.text_field :question_2, class: "prospect-input" %> 
+		    	<!--<%= s.label :question_2, class: "prospect-label" %>
+		    	<%= s.text_field :question_2, class: "prospect-input" %>-->
 		    	<br />
 		    	<div class="sending">
 		    	<%= s.submit "Submit", class: "btn btn-primary button-send" %>
