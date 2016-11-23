@@ -124,7 +124,7 @@ section{
 }
 
 .navbar-home{
-	background-color: rgba(46, 184, 80,0.7);
+	background-color: rgba(46, 184, 80,0.9);
 }
 
 .alert{
@@ -134,11 +134,25 @@ section{
 /****** Footer *******/
 .footer{
 	height: 50px;
-	background-color: rgba(211,211,211,0.7);	
+	background-color: rgba(0,0,0,0.7);
+	color: white;	
 	padding-left: 10px;
 	position: absolute;
 	bottom: 0;
     width: 100%;
     clear: both;
+}
+
+@media (min-width: 300px) and (max-width: 1024px){
+	.footer{
+		height: auto;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px){	
+	.navbar-header .navbar-brand, .navbar-default .navbar-nav > li > a{
+	padding-left: 20px;
+	padding-right: 20px;
+	}
 }
 

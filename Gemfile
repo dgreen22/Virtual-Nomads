@@ -37,7 +37,9 @@ gem 'devise'
 
 gem 'ckeditor'
 
-gem "recaptcha", require: "recaptcha/rails"
+gem 'rails-html-sanitizer'
+
+gem 'meta-tags'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

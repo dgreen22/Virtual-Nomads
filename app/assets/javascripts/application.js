@@ -31,7 +31,7 @@ $(document).ready(function(){
 	setTimeout(function(){
 	$("#subscribeModal").modal("show"); 
 	}, 
-	5000
+	6000
 	);
 
 	$(".close").on("click", function(){

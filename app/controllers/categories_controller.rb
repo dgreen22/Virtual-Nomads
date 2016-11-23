@@ -1,7 +1,9 @@
 class CategoriesController < ApplicationController
+	before_action :authenticate_admin!
 
 	def new
 		@category = Category.new
+		set_meta_tags noindex: 'googlebot'
 	end
 
 	def create

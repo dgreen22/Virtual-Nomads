@@ -13,7 +13,6 @@
 .vid-content > h4{
 	font-weight: bold;
 	font-size: 24px;
-	color: black;
 	margin-right: 20px;
 	margin-bottom: 20px;
 }
@@ -24,4 +23,13 @@
 
 .instruct {
 	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/******** Media Queries ***********/
+
+@media (min-width: 768px) and (max-width: 1024px){	
+	.entry-info{
+		margin: auto;
+		text-align: center;
+	}
 }

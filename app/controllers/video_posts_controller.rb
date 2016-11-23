@@ -4,10 +4,15 @@ class VideoPostsController < ApplicationController
 
 	def index
 		@video_posts = VideoPost.all.order(id: :desc).page(params[:page]).per(10)
+
+		set_meta_tags title: "Virtual Nomads Video Posts",
+                	  keywords: "Videopost Videos Travel Travel_vlogs Travel_videos",
+                	  description: "Video posts providing travel inspiration"	
 	end
 
 	def new
 		@video_post = VideoPost.new
+		set_meta_tags noindex: 'googlebot'
 	end
 
 	def create
@@ -37,6 +42,7 @@ class VideoPostsController < ApplicationController
 
 	def edit
 		 @video_post = VideoPost.find(params[:id])
+		 set_meta_tags noindex: 'googlebot'
 	end
 
 	def destroy

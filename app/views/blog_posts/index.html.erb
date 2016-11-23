@@ -1,6 +1,6 @@
 <div id="blog-video">
 	<div class="row">
-		<div class="col-md-7 col-md-offset-2 entry-info">
+		<div class="col-lg-7 col-lg-offset-2 entry-info">
 			<% if admin_signed_in? %>
 				<p><%= link_to "Submit New Blog Post", new_blog_post_path, class: "btn btn-primary new-bg-button" %></p>	
 			<% end %>
@@ -14,29 +14,26 @@
 			<% end %>		
 			  <% @blog_posts.each do |b| %>
 				<div class="row">	
-					<div class="col-xs-12 col-md-6">	
+					<div class="col-xs-12 col-lg-6 bg-centre">	
 					  
 					  	<%= link_to blog_post_path(b) do %> 
 					  	<%= image_tag b.blog_pic.url(:thumb), class: "bg-thumb-pic img-responsive", alt: "blog post thumbnail" %>
 					  	<% end %>
 					 
 					</div><!--/col-md-6-->
-					<div class="col-xs-12 col-md-6">
+					<div class="col-xs-12 col-lg-6 bg-centre">
 						  <div class="bg-title-posted">
 							  <h4><span><%= link_to truncate(b.title.titleize, :length => 32), blog_post_path(b) %></span></h4>
 							  <h4> Posted By: <%= b.posted_by %></h4>
-						  </div>
-						  <div class="bg-category">
-						    <span id="c-title">Categories: </span><% b.categories.each do |ctg| %>
-						    <span id="c-name">
-						   	  <%= (ctg.category_name).titleize %>
-						   	  </span>
-						    <% end %><br>
-
+							  Categories: <% b.categories.each do |ctg| %>
+							   
+							   	  <%= (ctg.category_name).titleize %>
+							   	  
+							    <% end %>
 						  </div>
 						  <div class="bg-content">
-						  	<% if (raw(b.content)).length > 175 %> 
-						  		<%= truncate(raw(b.content), length: 175, omission: "...") {link_to "Read More", blog_post_path(b)} %>
+						  	<% if b.content.length > 175 %> 
+						  		<%= truncate(raw(b.content), length: 175, omission: "...", :escape => false) {link_to "Read More", blog_post_path(b)} %>
 					  		<% else %>
 					  			<%= raw(b.content) %>
 					  		<% end %>
@@ -56,7 +53,7 @@
 			<%= paginate @blog_posts %>	
 		</div><!--/entry-info-->
 
-		<div class="col-md-2 sidebar">
+		<div class="col-lg-2 sidebar">
 			<h1> Archives Categories </h1>
 				<% @categories.each do |list| %>
 				  <%= link_to (list.category_name).titleize, blog_posts_path(:search => "#{list.category_name}"), :method => "get", class: "search" %><br>

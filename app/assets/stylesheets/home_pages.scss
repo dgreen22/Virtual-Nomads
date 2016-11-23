@@ -28,6 +28,10 @@
     height: 100%;
 }
 
+.landing-pics{
+  background: linear-gradient(rgba(0,0,0,0.42),rgba(0,0,0,0.42));
+}
+
 .full-width {
     width: 100%;
     display: none;
@@ -185,24 +189,7 @@
 
 .subscribe-info{
 	margin: auto;
-}
-
-.subscribe-label{
-	display: inline-block;
-    float: left;
-    clear: left;
-    width: 75px;
-    text-align: right;
-    margin-bottom: 10px;
-    margin-left: 180px;
-}
-
-.subscribe-input{
-	display: inline-block;
-		float: left;
-		margin-left: 10px;
-		margin-bottom: 10px;
-		width: 200px;
+  margin-top: 15px;
 }
 
 /******* About ********/
@@ -214,10 +201,6 @@
 
 .about-title h3{
 	margin-bottom: 20px;
-}
-
-.about-title h1{
-	text-align: left;
 }
 
 .about-title{
@@ -232,6 +215,7 @@
 
 .about-me{
 	margin-top: 10px;
+  text-align: center;
 }
 
 .bio-two{
@@ -259,6 +243,7 @@
 
 .headshot > img{
 	border-radius: 5%;
+  margin: auto;
 }
 /******* Book Now (In prospects.scss) *****/
 
@@ -303,7 +288,7 @@
   text-align: center;
 }
 
-@media (min-width: 300px) and (max-width: 767px){
+@media (min-width: 300px) and (max-width: 1024px){
   .landing-area{
       margin-top: 0;
       height: auto;
@@ -337,11 +322,13 @@
   .about-title > h1{
     font-size: 28px;
     margin-top: 0;
+    text-align: center;
   }
 
   .about-title > h3{
      font-size: 18px;
      margin-top: 0;
+     text-align: center;
   }
 
   .bio-text > h1{
@@ -378,5 +365,12 @@
 
   .b-post h3{
     margin-top: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+  .b-post, .b-post img{
+    text-align: center;
+    margin: auto;
   }
 }

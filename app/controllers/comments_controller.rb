@@ -2,6 +2,8 @@ class CommentsController < ApplicationController
 
 	def new
 		@blog_post = BlogPost.find(params[:blog_post_id])
+		
+		set_meta_tags noindex: 'googlebot'
 	end
 
 	def create

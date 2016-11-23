@@ -1,19 +1,19 @@
 <div id="blog-video">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2 entry-info">
+		<div class="col-lg-8 col-lg-offset-2 entry-info">
 			<% if admin_signed_in? %>
 				<p><%= link_to "Submit New Video Post", new_video_post_path, class: "btn btn-primary new-bg-button" %></p>	
 			<% end %>	
 			<h1> Video Posts </h1>	
 			<% @video_posts.each do |b| %>
 				<div class="row">	
-					<div class="col-md-6 vid-main">
+					<div class="col-lg-6 vid-main">
 					  <%= raw(b.video) %>
 					</div><!--/vid-main-->
-					<div class="col-md-4">
+					<div class="col-lg-4">
 					  <div class="vid-content">
 					  <h4><%= (b.title).titleize %></h4> 			
-				  		<span>By: <%= b.posted_by %></span>
+				  		<h4>Posted By: <%= b.posted_by %></h4>
 				  	  </div><!--/bg-content-->
 					  <div class="vid-text">
 						  <h4>
@@ -35,7 +35,7 @@
 			<%= paginate @video_posts %>	
 		</div><!--/entry-info-->
 
-		<div class="col-md-2 sidebar">
+		<div class="col-lg-2 sidebar">
 			<h1>  </h1>
 				
 		</div><!--/sidebar-->

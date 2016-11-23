@@ -9,16 +9,23 @@ class BlogPostsController < ApplicationController
 		else
 			@blog_posts = BlogPost.all.order(id: :desc).page(params[:page]).per(10)
 		end
+
+		set_meta_tags title: "Virtual Nomads Blog Posts",
+                	  keywords: "Blogpost Blog Travel Travel_blog",
+                	  description: "Blog posts providing travel inspiration"	
 	end
 
 	def new
 	  @blog_post = BlogPost.new
 	  @blog_post.categorizations.build.build_category
 	  @blog_post.categories.build
+
+	  set_meta_tags noindex: 'googlebot'
 	end
 
 	def edit
 		 @blog_post = BlogPost.find(params[:id])
+		 set_meta_tags noindex: 'googlebot'
 	end
 
 	def create
@@ -45,7 +52,11 @@ class BlogPostsController < ApplicationController
 	end
 
 	def show
-		@blog_post = BlogPost.find(params[:id])	
+		@blog_post = BlogPost.find(params[:id])
+		bg_title = @blog_post.title
+		set_meta_tags title: "Virtual Nomads Blog Post",
+                	  keywords: "Blog_post Blog Travel Travel_blog",
+                	  description: "Blogposts providing travel inspiration"	
 	end
 
 	def destroy

@@ -63,11 +63,7 @@
 
 /******** Media Queries *********/
 
-@media (min-width: 300px) and (max-width: 767px){
-	.prospect-label{
-		text-align: left;
-		margin-left: 0;
-	}
+@media (min-width: 300px) and (max-width: 1024px){
 
 	.sending{
 		margin-bottom: 10px;
@@ -75,5 +71,13 @@
 
 	.book-form{
 		margin-top: 10px;
+	}
+}
+
+/******** Media Queries ***********/
+
+@media (min-width: 768px) and (max-width: 1024px){	
+		.prospect-label{
+		text-align: center;
 	}
 }

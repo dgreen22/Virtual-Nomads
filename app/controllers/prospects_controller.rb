@@ -2,6 +2,10 @@ class ProspectsController < ApplicationController
 
 	def new
 		@prospect = Prospect.new
+
+		set_meta_tags title: "Create Your Booking Now",
+                	  keywords: "Book_travel Travel_vacations Book_your_vacation",
+                	  description: "Blogposts providing travel inspiration"	
 	end
 
 	def create

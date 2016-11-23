@@ -90,3 +90,9 @@
 
 /******** Media Queries ***********/
 
+@media (min-width: 768px) and (max-width: 1024px){	
+	.bg-centre, .bg-centre img, .main-bg-title{
+		margin: auto;
+		text-align: center;
+	}
+}
