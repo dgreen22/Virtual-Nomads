@@ -12,14 +12,14 @@
 					</div><!--/vid-main-->
 					<div class="col-lg-4">
 					  <div class="vid-content">
-					  <h4><%= (b.title).titleize %></h4> 			
+					  	<h4><%= (b.title).titleize %></h4>	
 				  		<h5>Posted By: <%= b.posted_by %></h5>
-				  	  </div><!--/bg-content-->
+				  	  </div><!--/vid-content-->
 					  <div class="vid-text">
 						  <span class="vid-text-header"> Summary: </span>
 						  <h4>
 						  	<%= b.video_text %></h4>
-					  </div><!--/bg-title-posted-->
+					  </div><!--/vid-text-->
 					  
 				  	  <% if admin_signed_in? %>			 
 						  <%= link_to edit_video_post_path(b) do %>

@@ -2,7 +2,7 @@
 	<div class="col-md-6 col-md-offset-3 blog-submit">
 	<%= form_for @video_post do |b| %>
 		<%= b.label :title, "Title:", class: "input-label" %>
-		<%= b.text_field :title %><br>
+		<%= b.text_field :title, class: "vid-input" %><br>
 
 		<%= b.label :posted_by, "Posted By:", class: "input-label" %>
 		<%= b.select :posted_by, options_for_select(["Jessica Opoku-Amoah"]), {include_blank: false} %><br>  

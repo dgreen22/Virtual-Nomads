@@ -12,13 +12,13 @@
 			<% end %>
 	
 		<%= b.label :title, "Title:", class: "input-label" %>
-		<%= b.text_field :title %><br>
+		<%= b.text_field :title, class: "bg-input" %><br>
 
 		<%= b.label :category, "Select Categories:" %>
 		<%= b.collection_select(:category_ids, Category.all, :id, :category_name, {blank: "Select Category"},{multiple: true}) %><br>
 
 		<%= b.label :posted_by, "Posted By:", class: "input-label" %>
-		<%= b.select :posted_by, options_for_select(["Jessica Opoku-Amoah"]), {include_blank: false} %><br>  
+		<%= b.select :posted_by, options_for_select(["Jessica Opoku-Amoah"]), {include_blank: false}, class: "bg-input" %><br>  
 
 		<%= link_to "Add New Category", new_category_path, class: "btn btn-info" %><br>
 
