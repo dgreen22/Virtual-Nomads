@@ -7,6 +7,7 @@ class BlogPost < ApplicationRecord
 	has_many :comments, dependent: :destroy
 	accepts_nested_attributes_for :comments
 	mount_uploader :blog_pic, BlogPicUploader
+	validates :title, :posted_by, :blog_pic, :content, presence: true
 
 	if Rails.env.development?
 		def self.search(search)

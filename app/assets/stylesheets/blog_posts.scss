@@ -76,7 +76,7 @@
 	font-family: 'Open Sans Condensed', sans-serif;
 }
 
-/********* New ********/
+/********* New / Edit Pages ********/
 
 .input-label{
 	font-weight: bolder !important;
@@ -86,6 +86,12 @@
 
 .blog-submit{
 	margin-top: 20px;
+}
+
+.red-error{
+	color: red;
+	font-style: bolder;
+	font-size: 18px;
 }
 
 /******** Media Queries ***********/

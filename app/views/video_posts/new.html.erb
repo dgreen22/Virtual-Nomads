@@ -1,17 +1,24 @@
 <div class="row">
 	<div class="col-md-6 col-md-offset-3 blog-submit">
 	<%= form_for @video_post do |b| %>
+		<% if @video_post.errors.full_messages.any? %>
+			<div class="red-error">
+				<% @video_post.errors.full_messages.each do |error_message| %>
+					    - <%= error_message %> <br />				
+				<% end %>
+			</div>
+		<% end %>
 		<%= b.label :title, "Title:", class: "input-label" %>
 		<%= b.text_field :title %><br>
 
 		<%= b.label :posted_by, "Posted By:", class: "input-label" %>
 		<%= b.select :posted_by, options_for_select(["Jessica Opoku-Amoah"]), {include_blank: false} %><br>  
 
-		<%= b.label :video_text, "Video Text" %>
+		<%= b.label :video_text, "Video Text:" %>
 		<%= b.text_field :video_text, class: "vid-input" %><br>
 
-		<%= b.label :video, "Enter Video IFrame Below", class: "input-label" %>
-			<p class="instruct"> <span class="instruct-header"> Instructions: </span> <br><br> 1) After video uploaded to YouTube, on YouTube video page, click on 'Share', then click on 'Embed', then copy and paste only the link inside the quotation marks after "src=".    For example, if you saw "< iframe width="560" height="315" src="<span class="link-focus">https://www.youtube.com/embed/xXH5agV7skw</span>" frameborder="0" allowfullscreen></ iframe>", you would only copy the bolded/highlighted section and paste that into the URL box for IFrame below.<br><br> 2) Ensure you make the size of the video/Iframe <span class = "framing">width: 375, height: 250 </span></p>
+		<%= b.label :video, "Enter Video IFrame Below:", class: "input-label" %>
+			<p class="instruct"> <span class="instruct-header"> Instructions: </span> <br><br> 1) After video uploaded to YouTube, on YouTube video page, click on 'Share', then click on 'Embed', then copy and paste only the link inside the quotation marks after "src=".    For example, if you saw "< iframe width="560" height="315" src="<span class="link-focus">https://www.youtube.com/embed/xXH5agV7skw</span>" frameborder="0" allowfullscreen></ iframe>", you would only copy the bolded/highlighted section and paste that into the URL box for IFrame below.<br><br> 2) Ensure you make the size of the video/Iframe <span class = "framing">width: 375, height: 250 </span> <br><br> 3) Don't change any other settings or it may distort the layout of the videos and text throughout the site.</p>
 		<%= b.cktext_area :video, rows: "20", cols: "20" %><br>
 
 		<%= b.submit "Submit", class: "btn btn-primary" %>

@@ -151,7 +151,7 @@
   margin-bottom: 0;
 }
 
-.b-post p{
+.b-post > p{
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -170,6 +170,10 @@
 .home-vid > h3{
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.home-vid > p{
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 /*********** Modal ***********/
@@ -262,6 +266,10 @@
 .social-content h3{
 	font-weight: bolder;
 	margin-bottom: 24px;
+}
+
+.social{
+  
 }
 
 .fb-button{

@@ -84,39 +84,36 @@
 		<% end %>
 	</div>
 </section>
-<section class="row video-content content">
-	<div class="video-content">
-		<div class="post-banner">
-			<h2> OUR VIDEOS </h2>
-			<h3> Check out my travel videos and don't forget to like, share and subscribe </h3>
-		</div>
-		<div class="col-xs-12 col-md-4 home-vid">	
-			<% if !@last_vid.nil? %>
-				<%= raw(@last_vid.video) %>
-				<h3> <%= @last_vid.title %></h3>
-				<p> <%= @last_vid.video_text %> </p>
-			<% end %>
-		</div>
-		<div class="col-xs-12 col-md-4 home-vid">
-			<% if !@second_vid.nil? %>
-				<%= raw(@second_vid.video) %>
-				<h3> <%= @second_vid.title %></h3>
-				<p> <%= @second_vid.video_text %> </p>
-			<% end %>
-		</div>
-		<div class="col-xs-12 col-md-4 home-vid">
-			<% if !@third_vid.nil? %>
-				<%= raw(@third_vid.video) %>
-				<h3> <%= @third_vid.title %></h3>
-				<p> <%= @third_vid.video_text %> </p>
-			<% end %>
-		</div>
+<section class="row video-content content">	
+	<div class="post-banner">
+		<h2> OUR VIDEOS </h2>
+		<h3> Check out my travel videos and don't forget to like, share and subscribe </h3>
+	</div>
+	<div class="col-xs-12 col-md-4 home-vid">	
+		<% if !@last_vid.nil? %>
+			<%= raw(@last_vid.video) %>
+			<h3> <%= @last_vid.title %></h3>
+			<p> <%= @last_vid.video_text %> </p>
+		<% end %>
+	</div>
+	<div class="col-xs-12 col-md-4 home-vid">
+		<% if !@second_vid.nil? %>
+			<%= raw(@second_vid.video) %>
+			<h3> <%= @second_vid.title %></h3>
+			<p> <%= @second_vid.video_text %> </p>
+		<% end %>
+	</div>
+	<div class="col-xs-12 col-md-4 home-vid">
+		<% if !@third_vid.nil? %>
+			<%= raw(@third_vid.video) %>
+			<h3> <%= @third_vid.title %></h3>
+			<p> <%= @third_vid.video_text %> </p>
+		<% end %>
 	</div>
 </section>
 <section class="row social-content content">
 	<div class="post-banner">
 		<h2> Stay In Touch </h2>
-
 	</div>
 	<div class="col-xs-12 col-md-4 mail-post scl">
 		<h3> Never Miss a post! </h3>

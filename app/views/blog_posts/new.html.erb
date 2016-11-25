@@ -1,6 +1,16 @@
 <div class="row">
 	<div class="col-md-6 col-md-offset-3 blog-submit">
-	<%= form_for @blog_post do |b| %>
+		
+	  <%= form_for @blog_post do |b| %>
+			<% if @blog_post.errors.full_messages.any? %>
+				<div class="red-error">
+					<% @blog_post.errors.full_messages.each do |error_message| %>
+						    - <%= error_message %> <br />
+					
+					<% end %>
+				</div>
+			<% end %>
+	
 		<%= b.label :title, "Title:", class: "input-label" %>
 		<%= b.text_field :title %><br>
 
