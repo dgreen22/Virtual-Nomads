@@ -14,15 +14,41 @@
 	font-weight: bold;
 	font-size: 24px;
 	margin-right: 20px;
-	margin-bottom: 20px;
 }
 
-.vid-text{
+.vid-text > h4{
+	color: gray;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.vid-text-header{
 	color: gray;
 }
 
 .instruct {
 	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/********* New / Edit Pages*****************/
+.vid-input{
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.link-focus{
+	font-family: "Times New Roman", Georgia, Serif; 
+	font-weight: bolder;
+	font-size: 16px;
+	background-color: yellow;
+}
+
+.framing{
+	font-family: "Times New Roman", Georgia, Serif;
+	background-color: yellow;
+	font-weight: bolder;
+}
+
+.instruct-header{
+	font-weight: bolder;
 }
 
 /******** Media Queries ***********/
