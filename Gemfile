@@ -41,6 +41,8 @@ gem 'rails-html-sanitizer'
 
 gem 'meta-tags'
 
+gem "fog-aws"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
