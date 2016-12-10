@@ -9,7 +9,7 @@
 				<h2 class="search-title"> Category "<%= params[:search] %>"</h2>
 			<% else %>
 			<div class="main-bg-title">		
-				<h1> Blog Posts </h1>
+				<h1> Travel Tales </h1>
 			</div><!--/main-bg-title-->
 			<% end %>		
 			  <% @blog_posts.each do |b| %>
@@ -54,7 +54,7 @@
 		</div><!--/entry-info-->
 
 		<div class="col-lg-2 sidebar">
-			<h1> Archives Categories </h1>
+			<h1 class="sidebar-cat-head"> Categories </h1>
 				<% @categories.each do |list| %>
 				  <%= link_to (list.category_name).titleize, blog_posts_path(:search => "#{list.category_name}"), :method => "get", class: "search" %><br>
 				<% end %>

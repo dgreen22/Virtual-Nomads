@@ -17,9 +17,9 @@ Rails.application.routes.draw do
 
 	get '/book-now' => 'prospects#new'
 
-	get '/blogs' => 'blog_posts#index'
+	get '/travel-tales' => 'blog_posts#index'
 
-	get '/videos' => 'video_posts#index'
+	get '/virtual-nomads-tv' => 'video_posts#index'
 
 	get '/admin' => 'devise/sessions#new'
 	

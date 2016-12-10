@@ -13,8 +13,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="<%= 'active' if current_page?("/home") %>"><%= link_to "Home", "/home" %></li>
         <li class="<%= 'active' if current_page?("/about-me") %>"><%= link_to "About", "/about-me" %></li>
-        <li class="<%= 'active' if current_page?("/blogs") %>"><%= link_to "Blogs", "/blogs" %></li>
-        <li class="<%= 'active' if current_page?("/videos") %>"><%= link_to "Videos", "/videos" %></li>
+        <li class="<%= 'active' if current_page?("/travel-tales") %>"><%= link_to "Travel Tales", "/travel-tales" %></li>
+        <li class="<%= 'active' if current_page?("/videos") %>"><%= link_to "Virtual Nomads TV", "/virtual-nomads-tv" %></li>
         <li class="<%= 'active' if current_page?("/book-now") %>"><%= link_to "Book Now", "/book-now", class: "btn btn-book" %></li>
         <li><% if admin_signed_in? %>
           <%= link_to "Sign Out", destroy_admin_session_path, method: "delete", class: "btn btn-warning" %></li> 
