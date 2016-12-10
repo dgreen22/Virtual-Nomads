@@ -27,7 +27,7 @@ $(document).ready(function(){
 	function(){
 		$(this).animate({opacity: 1},"fast")
 	});
-
+	
 	setTimeout(function(){
 	$("#subscribeModal").modal("show"); 
 	}, 

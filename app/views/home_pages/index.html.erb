@@ -54,30 +54,30 @@
 
 <section class="row blog-content content">	
 	<div class="arrow bounce">
-    <a href="#bg-first" data-target="bg-first"></a>
-  </div> <!--/.arrow bounce-->
+	    <a href="#bg-first" data-target="bg-first"></a>
+	</div> <!--/.arrow bounce-->
 	<div class="post-banner" id="bg-first">
 		<h2> Travel Tales</h2>
 		<h3> Check out my trips and tips </h3>
 	</div>
-	<div class="col-xs-12 col-md-4 b-post">
+	<div class="col-xs-12 col-md-3 col-centered b-post">
 		<% if !@last.nil? %>
-			<%= image_tag "#{@last.blog_pic.thumb.url}", class: "index-thumbnails img-responsive", alt: "vacation thumbnail pic" %>
+			<%= image_tag "#{@last.blog_pic.thumb.url}", class: "index-thumbnails", alt: "vacation thumbnail pic" %>
 			<h3> <%= link_to truncate(@last.title, :length => 24), blog_post_path(@last) %></h3>
 			<p><%= truncate(raw(@last.content), length: 56, omission: "...", :escape => false) {link_to "Read More", blog_post_path(@last)} %></p>
 		<% end %>
 	</div><hr class="hidden-lg">
-	<div class="col-xs-12 col-md-4 b-post">
+	<div class="col-xs-12 col-md-3 col-centered b-post">
 		<% if !@second.nil? %>
-			<%= image_tag "#{@second.blog_pic.thumb.url}", class: "index-thumbnails img-responsive", alt: "vacation thumbnail pic" %>
+			<%= image_tag "#{@second.blog_pic.thumb.url}", class: "index-thumbnails", alt: "vacation thumbnail pic" %>
 			<h3> <%= link_to truncate(@second.title, :length => 24), blog_post_path(@second) %>
 			</h3>
 			<p><%= truncate(raw(@second.content), length: 56, omission: "...", :escape => false) {link_to "Read More", blog_post_path(@second)} %></p>
 		<% end %>
 	</div><hr class="hidden-md hidden-lg">
-	<div class="col-xs-12 col-md-4 b-post">
+	<div class="col-xs-12 col-md-3 col-centered b-post">
 		<% if !@third.nil? %>
-			<%= image_tag "#{@third.blog_pic.thumb.url}", class: "index-thumbnails img-responsive", alt: "vacation thumbnail pic" %>
+			<%= image_tag "#{@third.blog_pic.thumb.url}", class: "index-thumbnails", alt: "vacation thumbnail pic" %>
 			<h3> <%= link_to truncate(@third.title, :length => 24), blog_post_path(@third) %>
 			</h3>
 			<p><%= truncate(raw(@third.content), length: 56, omission: "...", :escape => false) {link_to "Read More", blog_post_path(@third)} %>	</p>		
@@ -89,21 +89,21 @@
 		<h2> Virtual Nomads TV </h2>
 		<h3> Check out my travel videos and don't forget to like, share and subscribe </h3>
 	</div>
-	<div class="col-xs-12 col-md-4 home-vid">	
+	<div class="col-xs-12 col-md-3 col-centered home-vid">	
 		<% if !@last_vid.nil? %>
 			<%= raw(@last_vid.video) %>
 			<h3> <%= @last_vid.title %></h3>
 			<p> <%= @last_vid.video_text %> </p>
 		<% end %>
 	</div>
-	<div class="col-xs-12 col-md-4 home-vid">
+	<div class="col-xs-12 col-md-3 col-centered home-vid">
 		<% if !@second_vid.nil? %>
 			<%= raw(@second_vid.video) %>
 			<h3> <%= @second_vid.title %></h3>
 			<p> <%= @second_vid.video_text %> </p>
 		<% end %>
 	</div>
-	<div class="col-xs-12 col-md-4 home-vid">
+	<div class="col-xs-12 col-md-3 col-centered home-vid">
 		<% if !@third_vid.nil? %>
 			<%= raw(@third_vid.video) %>
 			<h3> <%= @third_vid.title %></h3>
@@ -115,17 +115,17 @@
 	<div class="post-banner">
 		<h2> Stay In Touch </h2>
 	</div>
-	<div class="col-xs-12 col-md-4 mail-post scl">
+	<div class="col-xs-12 col-md-3 col-centered mail-post scl">
 		<h3> Never Miss a post! </h3>
 		   <%= render partial: "mail_chimp_subscriber_form" %>
 		   <%= image_tag "ca-small-logo.jpg", class: "nex-tico", alt: "Nexion Logo" %>
 		   <%= image_tag "tico-logo.jpg", class: "nex-tico", alt: "Tico.ca Logo" %>
 	</div>
-	<div class="col-xs-6 col-md-4 fb-post scl">
+	<div class="col-xs-12 col-md-3 col-centered fb-post scl">
 		<h3> Latest Facebook Posts </h3>
-		<div class="fb-page" data-href="https://www.facebook.com/Virtual-Nomads-257068121132395/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Virtual-Nomads-257068121132395/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Virtual-Nomads-257068121132395/">Virtual Nomads</a></blockquote></div>
+		<div class="fb-page" data-href="https://www.facebook.com/Virtual-Nomads-257068121132395/" data-tabs="timeline" data-width="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Virtual-Nomads-257068121132395/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Virtual-Nomads-257068121132395/">Virtual Nomads</a></blockquote></div>
 	</div>
-	<div class="col-xs-6 col-md-4 follow scl">
+	<div class="col-xs-12 col-md-3 col-centered follow scl">
 		<h3> Follow Us</h3>
 		<%= link_to image_tag('facebook.png', class: "fb-button social img-responsive center-block", alt: 'facebook logo'), "https://www.facebook.com/Virtual-Nomads-257068121132395/", target: '_blank' %><br>
 		<%= link_to image_tag("twitter.png", class: "tw-button social img-responsive center-block", alt: "twitter logo"), "https://twitter.com/?lang=en-ca", target: "_blank" %><br>	
