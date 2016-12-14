@@ -16,6 +16,7 @@
 //= bootstrap.min.js
 //= require ckeditor/init
 //= require ckeditor/config
+//= require social-share-button
 //= require_tree .
 
 $(document).ready(function(){
@@ -31,7 +32,7 @@ $(document).ready(function(){
 	setTimeout(function(){
 	$("#subscribeModal").modal("show"); 
 	}, 
-	6000
+	40000
 	);
 
 	$(".close").on("click", function(){

@@ -132,11 +132,6 @@
   text-align: center;
 }
 
-.blog-content h1{
-	font-size: 40px;
-	font-weight: bold;
-}
-
 .post-banner > h2{
 	text-align: center;
 	font-size: 42px;
@@ -145,15 +140,23 @@
 }
 
 .post-banner > h3{
-  color: gray;
+  
   margin-top: 0;
   margin-bottom: 20px; 
  
 }
 
+.b-post{
+  vertical-align: top;
+}
+
 .b-post h3{
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.b-post > h3 > a, .b-post > p > a{
+  color: rgba(46, 184, 80,0.9);
 }
 
 .b-post > p{
@@ -180,6 +183,11 @@
 .blog-content{
   text-align: center;
 }
+
+.blog-breaker{
+  margin-bottom: 30px;
+}
+
 /******** Video Section ********/
 
 .home-vid > h3{
@@ -190,6 +198,10 @@
 .home-vid > p{
   font-family: 'Open Sans Condensed', sans-serif;
   font-variant: normal;
+}
+
+.home-vid{
+  vertical-align: top;
 }
 
 .video-content{
@@ -226,12 +238,16 @@
 
 /******* About ********/
 
-.about-title p{
+.about-title > p{
 	font-size: 16px;
 	text-align: left;
 }
 
-.about-title h3{
+.about-title > p > span{
+  font-weight: bolder;
+}
+
+.about-title > h3{
 	margin-bottom: 20px;
 }
 
@@ -242,7 +258,6 @@
 .quote{
 	text-align: center;
 	margin-top: 20px;
-  color: gray;
 }
 
 .about-me{
@@ -284,7 +299,6 @@
 /****** Social *****/
 
 .social-content h3{
-	font-weight: bolder;
 	margin-bottom: 24px;
 }
 
@@ -325,7 +339,11 @@
   text-align: center;
 }
 
-@media (min-width: 300px) and (max-width: 1024px){
+.scl{
+  vertical-align: top;
+}
+
+@media (min-width: 300px) and (max-width: 768px){
   .landing-area{
       margin-top: 0;
       height: auto;
@@ -376,10 +394,6 @@
     margin-bottom: 25px;
   }
 
-  .full-width > h1, #fourth > h1{
-    font-size: 18px;
-  }
-
   .home-vid iframe{
     width: 100%;
   }
@@ -396,12 +410,14 @@
     margin-bottom: 0;
   }
 
-  .b-post {
-    padding-bottom: 20px;
-  }
-
   .b-post h3{
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 767px){  
+  .full-width > h1, #fourth > h1{
+    font-size: 18px;
   }
 }
 
@@ -410,4 +426,9 @@
     text-align: center;
     margin: auto;
   }
+
+  .landing-area{
+      height: 500px;
+  }
+
 }

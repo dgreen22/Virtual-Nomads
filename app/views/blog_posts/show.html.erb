@@ -1,11 +1,14 @@
 <div class="row">
 	<div class= "col-md-12">
-		<%= link_to "Return to Blogs", '/blogs', class: "btn btn-warning bg-return" %><br>
+		<%= link_to "Return to Blogs", '/travel-tales', class: "btn btn-warning bg-return" %><br>
 	</div>
 </div>
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 		<div class="full-blog">
+		  <div class="share-options">
+			<!--<%= social_share_button_tag("See Our Post: #{@blog_post.title}") %>-->
+		  </div>
 		  <div class="bg-image">	  
 		  	<%= image_tag @blog_post.blog_pic %><br>
 		  </div>
@@ -26,8 +29,7 @@
 			</p>
 		  </div>
 		  <div class="show-content">
-		  	<h4><%= raw(@blog_post.content) %></h4><br>git status
-		  	gi
+		  	<h4><%= raw(@blog_post.content) %></h4><br>
 		  </div><!--/show-content-->
 		  <% if admin_signed_in? %>	
 	      <%= link_to edit_blog_post_path(@blog_post) do %>

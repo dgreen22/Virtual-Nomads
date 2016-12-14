@@ -47,6 +47,9 @@
 					  <p class="comment-count"> Comments: <%= b.comments.count %> </p><br>
 					</div><!--/col-md-6-->				
 				</div><!--/row-->
+				<div class="share-options">
+					<%= social_share_button_tag("#{b.title}", :url => "http://#{request.domain}#{blog_post_path(b)}") %>
+				</div>
 				<hr>
 				<br>
 			  <% end %>

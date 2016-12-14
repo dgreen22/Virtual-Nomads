@@ -43,6 +43,8 @@ gem 'meta-tags'
 
 gem "fog-aws"
 
+gem 'social-share-button', '~> 0.1.10'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

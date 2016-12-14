@@ -25,21 +25,19 @@
 
 .bg-category #c-name{
 	text-decoration: underline;
-	color: gray;
 	margin-left: 5px;
     display: block;
     float: left;
 }
 
-.bg-title-posted{
-	color: gray;
+.bg-title-posted > h4 > span > a{
+	color: rgba(46, 184, 80,0.9);
 }
 
 .comment-count{
 	font-weight: bolder;
 	margin-top: 5px;
 	font-size: 16px;
-	color: gray;
 }
 
 #c-title{
@@ -57,6 +55,8 @@
 	border-radius: 2px;
 	color: gray;
 	background-color: #f5f5f5;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-variant: normal;
 }
 
 .show-posted > p > span{
@@ -78,6 +78,14 @@
 	font-variant: normal;
 }
 
+.sidebar > a {
+	color: rgba(46, 184, 80,0.9);
+}
+
+.full-blog{
+	width: 600px;
+}
+
 /********* New / Edit Pages ********/
 
 .input-label{
@@ -88,6 +96,7 @@
 
 .blog-submit{
 	margin-top: 20px;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .red-error{

@@ -15,7 +15,7 @@
 		      <%= image_tag("adventure-pic-dim.jpg", class: "landing-pics", alt: "person walking on canopy") %>
 		      <div class="carousel-caption">
 		      	<div class="full-width">
-			        <h1>We listen to finds the things that make your trip that more awesome</h1>
+			        <h1>We find the things that make your trip that more awesome</h1>
 			    </div><!--/full-width-->
 		      </div>
 		    </div>
@@ -24,7 +24,7 @@
 		    	<%= image_tag("art-pic-dim.jpg", class: "landing-pics", alt: "person in art shop") %>
 		      <div class="carousel-caption">
 		      	<div class="full-width">
-			        <h1>Allow us to curate a travel itinerary  that fits your style</h1>
+			        <h1>Travelling leaves you speechless and turns you into a storyteller</h1>
 		      	</div>
 		      </div>
 		    </div>
@@ -33,7 +33,7 @@
 		    	<%= image_tag("beach-pic-dim.jpg", class: "landing-pics", alt: "person on beach") %>
 		      <div class="carousel-caption">
 		      	<div class="full-width">
-			        <h1>Travelling leaves you speechless, then turns you into a storyteller</h1>
+			        <h1>Allow us to curate a travel itinerary that fits your style</h1>
 			      </div>
 			    </div>
 		    </div>
@@ -62,23 +62,23 @@
 	</div>
 	<div class="col-xs-12 col-md-3 col-centered b-post">
 		<% if !@last.nil? %>
-			<%= image_tag "#{@last.blog_pic.thumb.url}", class: "index-thumbnails", alt: "vacation thumbnail pic" %>
-			<h3> <%= link_to truncate(@last.title, :length => 24), blog_post_path(@last) %></h3>
+			<%= image_tag "#{@last.blog_pic.thumb.url}", class: "index-thumbnails img-responsive", alt: "vacation thumbnail pic" %>
+			<h3> <%= link_to truncate(@last.title, :length => 20), blog_post_path(@last) %></h3>
 			<p><%= truncate(raw(@last.content), length: 56, omission: "...", :escape => false) {link_to "Read More", blog_post_path(@last)} %></p>
 		<% end %>
-	</div><hr class="hidden-lg">
+	</div><hr class="hidden-md hidden-lg blog-breaker">
 	<div class="col-xs-12 col-md-3 col-centered b-post">
 		<% if !@second.nil? %>
-			<%= image_tag "#{@second.blog_pic.thumb.url}", class: "index-thumbnails", alt: "vacation thumbnail pic" %>
-			<h3> <%= link_to truncate(@second.title, :length => 24), blog_post_path(@second) %>
+			<%= image_tag "#{@second.blog_pic.thumb.url}", class: "index-thumbnails img-responsive", alt: "vacation thumbnail pic" %>
+			<h3> <%= link_to truncate(@second.title, :length => 20), blog_post_path(@second) %>
 			</h3>
 			<p><%= truncate(raw(@second.content), length: 56, omission: "...", :escape => false) {link_to "Read More", blog_post_path(@second)} %></p>
 		<% end %>
-	</div><hr class="hidden-md hidden-lg">
+	</div><hr class="hidden-md hidden-lg blog-breaker">
 	<div class="col-xs-12 col-md-3 col-centered b-post">
 		<% if !@third.nil? %>
-			<%= image_tag "#{@third.blog_pic.thumb.url}", class: "index-thumbnails", alt: "vacation thumbnail pic" %>
-			<h3> <%= link_to truncate(@third.title, :length => 24), blog_post_path(@third) %>
+			<%= image_tag "#{@third.blog_pic.thumb.url}", class: "index-thumbnails img-responsive", alt: "vacation thumbnail pic" %>
+			<h3> <%= link_to truncate(@third.title, :length => 20), blog_post_path(@third) %>
 			</h3>
 			<p><%= truncate(raw(@third.content), length: 56, omission: "...", :escape => false) {link_to "Read More", blog_post_path(@third)} %>	</p>		
 		<% end %>
