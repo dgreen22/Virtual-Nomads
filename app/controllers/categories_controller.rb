@@ -17,6 +17,15 @@ class CategoriesController < ApplicationController
 	  end
 	end
 
+	def index
+		@categories = Category.all
+	end
+
+	  def destroy
+	    Category.find(params[:id]).destroy
+	    flash[:notice] = "Category deleted"
+	    redirect_to categories_url
+	  end
 
 	def cat_params
   	params.require(:category).permit(:category_name)
