@@ -447,5 +447,11 @@
   .home-vid iframe{
     max-width: 100%;
   }
+}
 
+@media (max-width: 360px){
+  .col-xs-12.b-post{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
