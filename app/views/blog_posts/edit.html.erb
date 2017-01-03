@@ -14,7 +14,7 @@
 			<%= b.label :posted_by %>
 			<%= b.text_field :posted_by, class: "bg-input" %><br>
 
-			<%= b.label :content %>
+			<%= b.label :content, "Enter Content Below: <br /> (Notes: <br />1) Ensure you do not insert a picture or video within the first 175 characters of your blog post, or it will distort the layout of your blog post page <br /> 2) Avoid changing anything to do with the font (size, style, weight, etc.)Doing this will create inconsistencies on the site and will signficantly reduce the visual appeal)".html_safe, class: "bg-input-label" %>
 			<%= b.cktext_area :content, rows: "20", cols: "120" %><br>
 
 			<%= b.label :blog_pic, "Picture" %>

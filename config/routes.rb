@@ -20,8 +20,6 @@ Rails.application.routes.draw do
 	get '/travel-tales' => 'blog_posts#index'
 
 	get '/virtual-nomads-tv' => 'video_posts#index'
-
-	get '/admin' => 'devise/sessions#new'
 	
 	resources :prospects, :subscribers, :categories
 
