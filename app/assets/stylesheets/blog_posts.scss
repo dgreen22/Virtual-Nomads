@@ -116,4 +116,22 @@
 		margin: auto;
 		text-align: center;
 	}
+
+	.sidebar{
+		min-height: 150px;
+    	line-height: normal;
+    	height: auto;
+    	margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 360px){
+	.bg-thumb-pic{
+		width: 300px;
+	}
+
+	.col-xs-12.bg-centre{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
 }
