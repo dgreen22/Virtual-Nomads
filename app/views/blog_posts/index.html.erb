@@ -33,7 +33,7 @@
 						  </div>
 						  <div class="bg-content">
 						  	<% if b.content.length > 175 %> 
-						  		<%= truncate(raw(b.content), length: 175, omission: "...", :escape => false) {link_to "Read More", blog_post_path(b)} %>
+						  		<%= truncate(raw(b.content), length: 175, omission: "...", :escape => false) {link_to "Read More", blog_post_path(b), class: "bg-content-rm"} %>
 					  		<% else %>
 					  			<%= raw(b.content) %>
 					  		<% end %>
